@@ -125,7 +125,7 @@
   gap: 0.75rem;
   padding-left: 0.75rem;
   border-left: 4px solid #3b82f6; /* Customize color */
-  /* margin-bottom: 1rem; */
+  margin-bottom: 1rem;
 }
 .modal-header{
   background-color: #adc4e7 !important;

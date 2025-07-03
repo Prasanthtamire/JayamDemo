@@ -13,10 +13,10 @@ import ScrollTop from './pages/ScrollTop';
 import Profile from './pages/Profile';
 import Addemployee from './pages/AddEmployee';
 import { Calendar } from 'lucide-react';
-import CompanyPolicy from './pages/CompanyPolicies'; // ⬅️ Add this at the top
+import CompanyPolicy from './pages/CompanyPolicies'; 
 import EditEmployee from './pages/EditEmployee';
-import ViewEmployee from './pages/EditEmployee';
-import NewEmployee from './pages/EditEmployee';
+import ViewEmployee from './pages/ViewEmployee';
+import NewEmployee from './pages/NewEmployee';
 import Department from './Masters/Department';
 import Designation from './Masters/Designation';
 import Band from './Masters/Band';
@@ -31,12 +31,10 @@ import LeaveApplication from './pages/LeaveApplicationPage';
 function App() {
   return (
     <Router>
-                         <ScrollTop />
-
+      <ScrollTop />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 font-poppins">
-        <AnimatePresence mode="wait">
-          <Routes>
-
+      <AnimatePresence mode="wait">
+      <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Layout> <Dashboard /> </Layout> } />
@@ -55,14 +53,12 @@ function App() {
             <Route path="/department" element={ <Layout> <Department /> </Layout>   } />
             <Route path="/designation" element={ <Layout> <Designation /> </Layout>   } />
             <Route path="/LeaveApplication" element={ <Layout> <LeaveApplication /> </Layout>   } />
-
             <Route path="/band" element={ <Layout> <Band /> </Layout>   } />
             <Route path="/languages" element={ <Layout> <Languages /> </Layout>   } />
             <Route path="/LeavesCode" element={ <Layout> <LeavesCode /> </Layout>   } />
             <Route path="/Employeerelatives" element={ <Layout> <Employeerelatives /> </Layout>   } />
-
-          </Routes>
-        </AnimatePresence>
+      </Routes>
+      </AnimatePresence>
       </div>
     </Router>
   );

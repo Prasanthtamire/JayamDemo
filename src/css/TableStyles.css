@@ -1,0 +1,99 @@
+.employee-table th,
+.employee-table td {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.table-avatar {
+  width: 45px;
+  height: 45px;
+}
+
+.employee-badge {
+  font-size: 0.75rem;
+      font-size: 0.75rem;
+    padding: 7px;
+    border-radius: 4px;
+}
+.badge-active {
+  background-color: #28a745 !important;
+  color: white !important;
+  font-weight: 400;
+}
+
+.badge-inactive {
+  background-color: #dc3545 !important;
+  color: white !important;
+    font-weight: 400;
+
+}
+
+.badge-notice {
+  background-color: #fd7e14 !important;
+  color: white !important;
+    font-weight: 400;
+
+}
+
+/* Responsive design with media queries */
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
+  .employee-table th,
+  .employee-table td {
+    font-size: 12px;
+  }
+
+  .table-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .employee-badge {
+    font-size: 0.65rem;
+    padding: 0.3em 0.5em;
+  }
+
+  .ms-3 {
+    margin-left: 0.5rem !important;
+  }
+
+  .fw-bold,
+  .text-muted {
+    font-size: 12px;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .employee-table th,
+  .employee-table td {
+    font-size: 13px;
+  }
+
+  .table-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .employee-badge {
+    font-size: 0.7rem;
+  }
+}
+
+/* Medium to Large Devices (Desktops) */
+@media (min-width: 769px) {
+  .employee-table th,
+  .employee-table td {
+    font-size: 14px;
+  }
+
+  .table-avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .employee-badge {
+    font-size: 0.75rem;
+  }
+}

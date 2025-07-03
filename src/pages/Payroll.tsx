@@ -167,9 +167,10 @@ const Payroll: React.FC = () => {
         transition={{ delay: 0.1 }}
         className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
       >
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Payroll Management</h1>
-          <p className="text-gray-600">Manage employee salaries and payments</p>
+        <div className="heading-with-line">
+          <h2 style={{ marginBottom: "0px" }} className="stat-value">
+            Payroll Managmenet
+          </h2>
         </div>
         
         <div className="flex items-center space-x-3">
@@ -212,8 +213,11 @@ const Payroll: React.FC = () => {
         transition={{ delay: 0.3 }}
         className="glass-card p-6"
       >
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+ <div className="heading-with-line">
+          <h2 style={{ marginBottom: "0px" }} className="stat-value">
+            Quick Actions
+          </h2>
+        </div>        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
             {
               icon: CreditCard,

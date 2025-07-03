@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
     <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="bg-white shadow-sm border-b border-gray-200 px-4 lg:px-6 py-4"
+      className="bg-white shadow-sm border-b border-gray-200 px-4 lg:px-6 py-3"
     >
       <div className="flex items-center justify-between">
         {/* Left side */}

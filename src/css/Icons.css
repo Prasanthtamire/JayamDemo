@@ -1,0 +1,51 @@
+.icon-btn {
+  padding: 8px;
+  border-radius: 9999px;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+/* Shared hover effect to show pointer focus */
+.icon-btn:hover,
+.icon-btn:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Edit Hover */
+.edit-icon {
+  background-color: #dcfce7;
+  color: #16a34a;
+    cursor: pointer !important;
+
+}
+.edit-icon:hover {
+  background-color: #bbf7d0;
+  color: #15803d;
+  transform: scale(1.1);
+}
+
+/* View Hover */
+.view-icon {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+.view-icon:hover {
+  background-color: #bfdbfe;
+  color: #1d4ed8;
+  transform: scale(1.1);
+}
+
+/* Delete Hover */
+.delete-icon {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+.delete-icon:hover {
+  background-color: #fecaca;
+  color: #b91c1c;
+  transform: scale(1.1);
+}

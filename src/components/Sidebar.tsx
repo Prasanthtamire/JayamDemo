@@ -100,16 +100,16 @@ const menuItems = [
     ],
   },
  
-   {
-    title: 'HRM',
-    icon: FileText,
-    path: '/hrm',
-    submenu: [
-      { title: 'Analytics', path: '/Analytics' },
-      // { title: 'Employee Reports', path: '/reports/employees' },
-      // { title: 'Attendance Reports', path: '/reports/attendance' },
-    ],
-  },
+  //  {
+  //   title: 'HRM',
+  //   icon: FileText,
+  //   path: '/hrm',
+  //   submenu: [
+  //     { title: 'Analytics', path: '/Analytics' },
+  //     { title: 'Employee Reports', path: '/reports/employees' },
+  //     { title: 'Attendance Reports', path: '/reports/attendance' },
+  //   ],
+  // },
   // {
   //   title: 'Master',
   //   icon: Settings,
@@ -188,7 +188,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     >
 
       {/* Header */}
-      <div className="flex items-center justify-between p-3 border-b border-gray-200">
+      <div className="flex items-center justify-between p-2.5 border-b border-gray-200">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10  from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
             {/* <Building2 className="w-6 h-6 text-white" /> */}

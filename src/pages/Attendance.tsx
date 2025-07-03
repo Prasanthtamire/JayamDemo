@@ -166,9 +166,10 @@ const Attendance: React.FC = () => {
         transition={{ delay: 0.1 }}
         className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
       >
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Attendance</h1>
-          {/* <p className="text-gray-600">Track and manage employee attendance</p> */}
+         <div className="heading-with-line">
+          <h2 style={{ marginBottom: "0px" }} className="stat-value">
+            Attendance
+          </h2>
         </div>
         
         <div className="flex items-center space-x-3">
@@ -243,7 +244,7 @@ const Attendance: React.FC = () => {
         className="glass-card overflow-hidden"
       >
         <div className="px-6 py-4 border-b border-gray-200">
-          <h2 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900 heading-with-line">
             Daily Attendance - {new Date(selectedDate).toLocaleDateString()}
           </h2>
         </div>

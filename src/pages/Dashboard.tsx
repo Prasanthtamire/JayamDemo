@@ -197,8 +197,8 @@ const EmployeeDashboard = () => {
         centered
       >
         <Modal.Header closeButton>
-          <div className="heading-with-line">
-            <h3 className="stat-value">Attendance Overview</h3>
+          <div className="heading-with-line" style={{ marginBottom: "0px" }}>
+            <h3 className="stat-value" >Attendance Overview</h3>
           </div>{" "}
         </Modal.Header>
         <Modal.Body>

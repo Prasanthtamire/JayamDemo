@@ -159,9 +159,10 @@ const Performance: React.FC = () => {
         transition={{ delay: 0.1 }}
         className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
       >
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Performance Management</h1>
-          <p className="text-gray-600">Track and manage employee performance reviews</p>
+         <div className="heading-with-line">
+          <h2 style={{ marginBottom: "0px" }} className="stat-value">
+            Performanve Managment
+          </h2>
         </div>
         
         <motion.button

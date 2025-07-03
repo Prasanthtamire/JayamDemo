@@ -20,8 +20,8 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import "./Profile.css"; // Import external CSS
-import "./TabsStyles.css"; // Import Bootstrap Tabs CSS
+import "../css/Profile.css"; // Import external CSS
+import "../css/TabsStyles.css"; // Import Bootstrap Tabs CSS
 
 const NewEmployee = () => {
   const [profilePhoto, setProfilePhoto] = useState(
