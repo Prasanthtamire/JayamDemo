@@ -1,0 +1,246 @@
+.Mainheading {
+  font-size: 14px;
+  font-weight: bold;
+  color: #004d40;
+      font-family: 'Poppins', sans-serif !important;
+
+}
+.form-label {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 0px !important;
+    font-weight: 500;
+    margin-right: 8px;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+.form-control {
+    display: block;
+    /* width: 150px;
+    height: 32px; */
+    padding: .375rem .75rem;
+    font-size: 13px !important;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+/* Container for action icons */
+.action-icons {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+  .button-container {
+  margin: 10px !important;
+}
+
+.save-button {
+  background-color: #359392 !important;
+  color: black !important;
+  margin-right: 10px !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+  height: 30px !important;
+  width: 50px !important;
+}
+
+.view-button {
+  background: rgb(144, 223, 222) !important;
+  color: black !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+    height: 30px !important;
+      width: 50px !important;
+
+
+}
+
+.clear-button {
+  background-color: #c1dedc !important;
+  color: black !important;
+  margin-left: 10px !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+    height: 30px !important;
+      width: 50px !important;
+
+
+}
+.table-dark {
+    --bs-table-color: #000000 !important;
+    --bs-table-bg: #c9d8e6 !important;
+    --bs-table-border-color: #ccd1d4 !important;
+}
+/* Common icon styles */
+.action-icons i {
+  font-size: 16px;
+  color: #004d40;
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover effects for specific icons */
+.action-icons i.bi-pencil:hover {
+  color: #0d6efd; /* blue */
+  transform: scale(1.2);
+}
+
+.action-icons i.bi-trash:hover {
+  color: #dc3545; /* red */
+  transform: scale(1.2);
+}
+
+.action-icons i.bi-eye:hover {
+  color: #036629; /* green */
+  transform: scale(1.2);
+}
+
+/* Style for the dropdown itself */
+select.form-select {
+  font-size: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+  color: #333;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  /* padding: 8px; */
+  /* background-color: #f9f9f9; */
+  cursor: pointer;
+  /* width: 150px;
+  height: 32px; */
+}
+.btn-custom {
+    background-color: #c1dedc !important;
+    border: none;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+.text-name {
+    color: #353131 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+.Text-cls {
+    color: #353131 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+}
+
+/* Style for the placeholder option */
+select.form-select option:disabled {
+  color: #aaa; /* Gray for placeholder */
+  font-family: 'Poppins', sans-serif !important;
+
+}
+
+/* Style for the options in the dropdown */
+select.form-select option {
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif !important;
+  color: #333;
+  background-color: #fff; /* Background for options */
+  padding: 5px;
+}
+.css-1lj39kh-MuiAccordionDetails-root {
+    padding: 8px 16px 16px;
+}
+th {
+    background-color: #c1dedc;
+    font-size: 12px;
+    font-weight: 500;
+}
+ td {
+    /* text-align: left; */
+    padding: 10px;
+    font-size: 11px;
+}
+/* Responsive table wrapper */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table header styles */
+.custom-table th {
+  background-color: #c1dedc;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Table cell styles */
+.custom-table td {
+  padding: 10px;
+  font-size: 11px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Optional: action icons spacing */
+.custom-table .action-icons i {
+  font-size: 14px;
+  color: #004d40;
+}
+
+@media (max-width: 576px) {
+  .custom-table th,
+  .custom-table td {
+    font-size: 10px;
+    padding: 6px;
+  }
+}
+
+.MuiAccordionSummary-root {
+    background-color: rgb(221 230 230) !important;
+            color: white; 
+            height: 39px !important;    
+  }                    
+  .css-1f1pi2l-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 33px !important;
+}
+.css-1umw9bq-MuiSvgIcon-root {
+  
+  width: 20px !important;
+  height: 20px !important;
+}
+.css-dogt0a-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 39px !important;
+}
+.css-1cb0or7-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+    height: 1px;
+}
+.css-1cb0or7-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 36px !important;
+  background-color: #e0ebea !important;
+}
+.css-f855n7-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  height: 0px  !important;
+}
+
+.css-1sp6ne1-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 39px !important;
+}
+.css-rizt0-MuiTypography-root {
+  margin: 0;
+  /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+/* Optional: style for checkbox alignment */
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}

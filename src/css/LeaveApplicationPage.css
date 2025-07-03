@@ -1,0 +1,271 @@
+.leave-page {
+  padding: 0px;
+  font-family: 'poppins', sans-serif !important;
+  /* background-color: #f5f7fa; */
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.section-title {
+  margin: 40px 0 10px;
+  color: #444;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 5px;
+  margin-bottom: 20px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: perspective(1000px) translateY(-5px) rotateX(2deg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.apply-card {
+  max-width: auto;
+  margin: 0 auto 40px;
+}
+
+.leave-form label {
+  display: block;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.leave-form input,
+.leave-form select,
+.leave-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.leave-form button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.leave-form button:hover {
+  background-color: #768da7;
+}
+
+.half-day-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.stat-card {
+  flex: 1 1 200px;
+  background-color: #e2f0ff;
+  border-left: 5px solid #3399ff;
+}
+
+.stat-card h3 {
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+/* Table + Search */
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.table-container {
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+  }
+
+  .apply-card {
+    padding: 15px;
+  }
+
+  table {
+    min-width: 100%;
+  }
+}
+.apply-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+.apply-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card {
+  transition: all 0.3s ease;
+  border-left: 5px solid #007bff;
+  background-color: #e9f5ff;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+  background-color: #d0ebff;
+}
+
+.table thead {
+  background-color: #007bff;
+  color: white;
+  font-size: 14px !important;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.pagination button {
+  min-width: 40px;
+}
+.leave-page {
+  margin-top: 20px;
+}
+
+
+
+.stat-value {
+  color: #444547;
+  font-weight: 500;
+  font-size:18px;
+}
+
+.apply-card,
+.stat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.apply-card:hover,
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card .stat-icon {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+      font-size: 12px !important;
+
+}
+
+.table th {
+      background-color: #e9f5ff !important;
+    color: #000000;
+    font-size: 13px !important;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+.applied-leaves-card {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+
+
+.applied-leaves-card .card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 600;
+}
+.css-s09cke-MuiTablePagination-selectLabel {
+      font-family: 'poppins', sans-serif !important;
+
+}
+.save-button {
+  background-color: #85c7c6  !important;
+  margin-right: 10px !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+  height: 34px !important;
+  width: 80px !important;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 5px !important;
+  font-size: 16ypx !important;
+}
+

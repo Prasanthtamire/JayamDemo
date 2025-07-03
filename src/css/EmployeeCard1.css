@@ -1,0 +1,100 @@
+.employee-card {
+    width: 278px;
+    height: 315px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    font-family: 'Poppins', sans-serif !important;
+    margin: 27px;
+}
+  
+  .status {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .menu-icon-employee {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .profile-section {
+    margin-top: 20px;
+  }
+  
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+  }
+  
+  .content {
+    margin-top: 10px;
+    
+  }
+  
+  .role {
+    color: #777;
+    margin: 5px 0;
+    font-size: 12px;
+    align-items: start;
+  }
+  .role1{
+    align-items: start;
+    font-size: 14px;
+
+
+  }
+  .info-box {
+    background: #b8c8d9;
+    padding: 0px;
+    border-radius: 3px;
+    margin: 10px 0;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: 'Poppins', sans-serif !important;
+  }
+  .info-box p {
+    margin: 5px 0;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px;
+    color: #000000;
+
+  }
+  
+  .info-box a {
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif !important;
+
+  }
+  
+  .joined {
+    color: #777;
+    font-size: 12px;
+  }
+  
+  .view-details {
+    display: inline-block;
+    color: #8f969e;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: -18px;
+  }
+
+  .view-details:hover {
+    color:rgb(58, 170, 58);
+  }

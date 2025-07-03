@@ -1,0 +1,580 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .css-1lt5qva-MuiCardContent-root {
+    padding: 5px !important;
+    background-color: rgb(243 243 243) !important;
+}
+  /* Container */
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  .MuiAccordionSummary-root {
+    background-color: rgb(221 230 230) !important;
+            color: white; 
+            height: 39px !important;    
+  }                    
+  .css-1808mag-MuiPaper-root-MuiAccordion-root.Mui-expanded:last-of-type {
+        /* margin-bottom: 0; */
+        /* margin-top: -60px; */
+        width: auto;
+        /* margin-left: -31px; */
+  }
+  .css-1808mag-MuiPaper-root-MuiAccordion-root.Mui-expanded:last-of-type {
+    /* margin-bottom: 0; */
+    margin-top: -6px !important;
+  }
+  .css-1808mag-MuiPaper-root-MuiAccordion-root.Mui-expanded:last-of-type {
+    margin-bottom: -16px !important;
+}
+  /* Flex Layout for Form Groups */
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  /* Columns */
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .sm-12 {
+    flex: 0 0 100%; /* Full width for small screens */
+  }
+  
+  .md-6 {
+    flex: 0 0 50%; /* 50% width for medium screens */
+  }
+  
+  .lg-4 {
+    flex: 0 0 33.33%; /* 33.33% width for large screens */
+  }
+  
+  /* Labels */
+  .form-label {
+    font-size: 11px  !important; /* Default font size for labels */
+    color: #333;
+    margin-bottom: 0px!important;
+  }
+  .form-select{
+    font-size: 14px; /* Default font size for labels */
+    color: #333;
+
+  }
+  /* Inputs */
+  .input {
+    width: 100%; /* Full width inputs */
+    padding: 10px;
+    font-size: 1rem; /* Default font size for input text */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Placeholder Styling */
+  .input::placeholder {
+    color: #aaa;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px; /* Default font size for placeholders */
+  }
+  
+  /* Styling the placeholder text */
+  .form-control::placeholder {
+    color: #888; /* Change the color of the placeholder */
+    font-size: 14px; /* Adjust the font size */
+    font-family: 'Poppins', sans-serif;
+    opacity: 1; /* Ensure full visibility of placeholder */
+    transition: color 0.3s ease; /* Smooth transition for hover or focus effects */
+  }
+  
+  /* Placeholder styling on focus */
+  .form-control:focus::placeholder {
+    color: #aaa; /* Lighter color when input is focused */
+  }
+  
+  /* Styling for the text area */
+  textarea.form-control {
+    width: 100%; /* Full width inside the column */
+    padding: 10px; /* Add padding for comfortable typing */
+    font-size: 1rem; /* Same font size as other inputs */
+    border: 1px solid #ccc; /* Match border style */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+    resize: vertical; /* Allow vertical resizing only */
+  }
+  
+  /* Placeholder styling for the text area */
+  textarea.form-control::placeholder {
+    color: #888; /* Placeholder text color */
+    font-size: 14px; /* Font size */
+    opacity: 1; /* Full visibility */
+  }
+  
+  /* Text area focus styling */
+  textarea.form-control:focus {
+    border-color: #007bff; /* Highlight border color on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Icon Class */
+  .icon-class {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #555; /* Adjust icon color */
+  }
+  
+  /* Tab Label */
+  .tab-label {
+    font-size: 12px; /* Adjust label font size */
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Media Queries */
+  
+  /* Small Screens (mobile) */
+  @media (max-width: 576px) {
+    .sm-12 {
+      flex: 0 0 100%; /* Full width for small screens */
+    }
+  
+    .input {
+      font-size: 0.9rem; /* Smaller font size for small screens */
+      width: 80%; /* Full width for inputs */
+      height: 30px;
+    }
+  
+    .label {
+      font-size: 12px; /* Smaller label font size for small screens */
+    }
+  
+    .input::placeholder {
+      font-size: 12px; /* Smaller placeholder font size */
+    }
+  }
+  
+  /* Medium Screens (tablets) */
+  @media (min-width: 576px) and (max-width: 768px) {
+    .md-6 {
+      flex: 0 0 100%; /* 100% width for medium screens */
+    }
+  
+    .input {
+      font-size: 1rem; /* Default input font size for medium screens */
+      width: 80%; /* Full width for inputs */
+      height: 30px;
+    }
+  
+    .label {
+      font-size: 12px; /* Default label font size for medium screens */
+    }
+  
+    .input::placeholder {
+      font-size: 12px; /* Default placeholder font size */
+    }
+  }
+  
+  /* Large Screens (desktop) */
+  @media (min-width: 768px) {
+    .lg-4 {
+      flex: 0 0 33.33%; /* 33.33% width for large screens */
+    }
+  
+    .input {
+      font-size: 1rem; /* Default font size for inputs */
+      height: 36px; /* Taller input fields */
+    }
+    
+    .form-label {
+      font-size: 12px; /* Slightly larger font size for labels on large screens */
+    }
+  
+    .input::placeholder {
+      font-size: 14px; /* Placeholder font size for large screens */
+    }
+  }
+  
+  /* Custom Tab Styles */
+  .MuiTabs-root {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .MuiTab-root {
+    min-width: 120px;
+  }
+  
+  .MuiTab-root.Mui-selected {
+    color: #78a2fd  !important;
+    font-size: 14px;
+    text-transform: none !important ;
+}
+.css-1f1pi2l-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 33px !important;
+}
+.css-1umw9bq-MuiSvgIcon-root {
+  
+  width: 20px !important;
+  height: 20px !important;
+}
+.css-dogt0a-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 39px !important;
+}
+/* .MuiTab-root:hover {
+  background-color: #c0c9df !important;
+} */
+  /* Tab Icon */
+  .MuiTab-root .icon-class {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .MuiTab-root.Mui-selected .icon-class {
+    color: #6c95ec; /* Active icon color */
+  }
+  
+  /* Form Grid Layout */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .col-sm-12, .col-md-3 {
+    flex: 0 0 100%; /* Full width for small screens */
+  }
+  
+  @media (min-width: 576px) {
+    .col-md-3 {
+      flex: 0 0 33.33%; /* 33.33% width for medium screens */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .col-md-3 {
+      flex: 0 0 25%; /* 25% width for large screens */
+    }
+  }
+  /* Accordion Styles */
+.Mainheading {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+
+  }
+  .button-card{
+    background-color:#c1dedc !important;
+  }
+  
+  /* Tabs Container Styles */
+  /* .tabs-container {
+    border-top: 2px solid #4CAF50;
+    padding-top: 1rem;
+  } */
+  
+  /* Tab Content Styles */
+  .tab-content {
+    background-color: rgb(243 243 243) !important;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .tabs-container .MuiTab-root {
+    text-transform: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+
+  }
+ 
+  /* Tab Styles */
+  .MuiTab-root {
+    font-size: 1rem;
+    text-transform: none;
+    color: #555;
+    font-weight: 500;
+    padding: 12px 24px;
+  }
+  
+  .MuiTab-root.Mui-selected {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+
+
+  }
+  
+  /* Tabs hover effect  */
+  /* .MuiTab-root:hover {
+    background-color: #f9f9f9;
+  } */
+  
+  /* Icon alignment and style */
+  .MuiTab-iconWrapper {
+    margin-right: 8px;
+  }
+  .Tabssec{
+    font-size: 12px;
+    color:red;
+  }
+  .css-iypnj4-MuiButtonBase-root-MuiTab-root {
+    font-family: 'Poppins', sans-serif;
+    text-transform: none;
+
+  }
+ 
+  .text-name {
+    color: #353131 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+  }
+  .Text-cls{
+    color: #353131 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+
+  }
+  
+  @media (max-width: 576px) {
+    .Mainheading {
+      font-size: 1rem;
+    }
+    .btn {
+      font-size: 0.875rem;
+    }
+  }
+  body, .table, .form-control {
+    font-family: 'Poppins', sans-serif;
+  }
+  .btn-custom {
+    background-color: #c1dedc !important;
+    border: none;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+
+  }
+
+  .image-preview {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  .image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 5px;
+  }
+  
+  .css-1cb0or7-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+    height: 1px;
+}
+.css-1cb0or7-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 36px !important;
+  background-color: #e0ebea !important;
+}
+.css-f855n7-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  height: 0px  !important;
+}
+
+.css-1sp6ne1-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 39px !important;
+}
+.css-rizt0-MuiTypography-root {
+  margin: 0;
+  /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+
+.form-control {
+  display: block;
+  width: 150px;
+  height:32px;
+  padding: .375rem .75rem;
+  font-size: 13px !important;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  appearance: none;
+  background-color: var(--bs-body-bg);
+  background-clip: padding-box;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+input::placeholder {
+  color: gray; /* Customize color */
+  font-size: 12px !important; 
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Style for the dropdown itself */
+select.form-select {
+  font-size: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+  color: #333;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  /* padding: 8px; */
+  /* background-color: #f9f9f9; */
+  cursor: pointer;
+  width: 150px;
+  height: 32px;
+}
+
+/* Style for the placeholder option */
+select.form-select option:disabled {
+  color: #aaa; /* Gray for placeholder */
+  font-family: 'Poppins', sans-serif !important;
+
+}
+
+/* Style for the options in the dropdown */
+select.form-select option {
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif !important;
+  color: #333;
+  background-color: #fff; /* Background for options */
+  padding: 5px;
+}
+
+
+/* Styling for the Tabs container */
+.custom-tabs {
+  border-radius: 3px !important; /* Rounded corners */
+}
+
+/* Styling for individual Tab items */
+.custom-tab {
+  font-size: 12px !important; /* Font size for tab labels */
+  font-family: 'Poppins', sans-serif !important;
+  text-transform: none !important; /* Prevent uppercase transformation */
+  padding: 10px 20px !important; /* Padding inside each tab */
+  color: #555 !important; /* Default text color */
+}
+
+/* Styling for the selected tab */
+.custom-tab.Mui-selected {
+  color: #1976d2 !important; /* Selected tab text color */
+}
+
+/* Styling for the Tabs indicator */
+.custom-tabs .MuiTabs-indicator {
+  background-color: #1976d2 !important; /* Blue indicator color */
+  height: 3px !important; /* Thickness of the indicator */
+}
+
+
+
+
+@media (max-width: 576px) {
+  .form-label {
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    font-size: 0.85rem;
+  }
+}
+
+.form-label {
+  white-space: nowrap;
+}
+
+.form-select {
+  padding: 0.45rem;
+}
+.css-1fr578y-MuiTabs-scroller {
+  position: relative;
+  margin-bottom: -11px !important;
+  margin-top: -9px !important;
+}
+
+.form-label1{
+  font-size: 12px !important;
+}
+.css-rizt0-MuiTypography-root {
+    margin: 0;
+      font-family: 'Poppins', sans-serif !important;
+   
+}
+.css-74d805-MuiButtonBase-root-MuiButton-root {
+        font-family: 'Poppins', sans-serif !important;
+
+}
+/* Style for Employee Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.css-1yvsbrk-MuiGrid-root{
+  margin-top: 10px;
+      font-family: 'Poppins', sans-serif !important;
+
+}
+th, td {
+  text-align: left;
+  padding: 10px;
+  font-size: 11px;
+}
+
+th {
+  background-color: #c1dedc;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+tr{
+  font-size: 12px;
+
+
+}
+/* Custom styles for action icons */
+.action-icons i {
+  cursor: pointer;
+  font-size: 11px;
+  color: #989ea3;
+}
+
+.action-icons i:hover {
+  color: #151616;
+  font-size: 12px;
+}
+
+.table>thead {
+  vertical-align: middle;
+}
+table striped tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Styling for Accordion header */
+.Mainheading {
+  font-size: 14px;
+  font-weight: bold;
+  color: #004d40;
+}
+
+.css-jineix-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  min-height: 39px !important;
+}

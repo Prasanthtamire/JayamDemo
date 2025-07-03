@@ -1,0 +1,220 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-card {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .upload-photo-button{
+    color: rgb(0, 0, 0) !important;
+    font-size: 12px !important;
+    background-color: #C1DEDC !important; /* Darker primary color for active tab */
+    width: 150px;
+    height: 30px;
+    text-transform: none !important;
+    margin-top: 10px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400 !important;
+
+    
+  }
+  .upload-Signature-button{
+    color: rgb(0, 0, 0) !important;
+    font-size: 12x;
+    background-color: #C1DEDC !important; /* Darker primary color for active tab */
+    width: 250px;
+    height: 30px;
+    text-transform: none !important;
+    margin-top: 10px !important;
+    font-family: 'Poppins', sans-serif !important;
+  }
+  .Edit-Signature-button{
+    color: rgb(0, 0, 0) !important;
+    font-size: 12x;
+    background-color: #C1DEDC !important; /* Darker primary color for active tab */
+    width: 150px;
+    height: 30px;
+    text-transform: none !important;
+    margin-top: 5px !important;
+    font-family: 'Poppins', sans-serif !important;
+  }
+  .profile-photo-container {
+    position: relative;
+
+  }
+  
+  .profile-avatar {
+    width: 150px !important;
+    height: 150px !important;
+    border: 2px solid #a5a6a7;
+    object-fit: cover;
+  }
+  
+ 
+  .upload-button {
+    padding: 5px;
+    min-width: 0;
+    background-color: #C1DEDC; /* Darker primary color for active tab */
+    color: white;
+  }
+  
+  .upload-button:hover {
+    background-color: #C1DEDC; /* Darker primary color for active tab */
+  }
+  
+  .profile-info {
+    margin-left: 32px;
+    margin-top: -26px;
+}
+  
+  .profile-name {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif !important;
+    text-align: start !important;
+
+  }
+  
+  .profile-details {
+    color: gray;
+    font-size: 12px !important;
+    font-family: 'Poppins', sans-serif !important;
+    text-align: start !important;
+    margin-left: 10px;
+
+  }
+  
+  .profile-tabs {
+    margin-top: 16px;
+  }
+  
+  .tab-content {
+    margin-top: 2px;
+  }
+  
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: 'Poppins', sans-serif !important;
+
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 13px;
+    color: #333;
+  }
+
+  img, svg {
+    vertical-align: middle;
+    font-size: 19px;
+}
+  
+
+.signature-container {
+    margin-top: -15px;
+    text-align: start;
+  }
+  
+  .signature-box {
+    padding: 13px;
+    border-radius: 8px;
+    background-color: rgb(243 243 243);
+    display: inline-block;
+    width: auto;
+    object-fit: cover;
+    margin-top: 11px;
+
+  }
+  
+  .signature-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .signature-preview {
+    border: 1px dashed #aaa;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .signature-placeholder {
+    color: #888;
+  }
+  
+  .signature-img {
+    max-height: 100px;
+    max-width: 100%;
+  }
+  
+  .upload-signature-button {
+    margin-top: 10px;
+  }
+  
+
+  .signature-container {
+    display: flex;
+    flex-direction: column; /* Adjust as needed, use 'row' for side-by-side */
+    align-items: flex-start;
+    margin-top: -30px;
+  }
+  .signature-container1 {
+    display: flex;
+    flex-direction: column; /* Adjust as needed, use 'row' for side-by-side */
+    align-items: flex-start;
+    margin-top: 0px;
+    background-color:rgb(243 243 243);
+  }
+  .static-signature {
+    margin-top: 10px;
+  }
+  .signature-image {
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+    border: 1px solid #ccc; /* Optional styling */
+    border-radius: 4px;
+  }
+  .button-container {
+  margin: 10px !important;
+}
+
+.save-button {
+  background-color: #359392 !important;
+  color: black !important;
+  margin-right: 10px !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.view-button {
+  background: rgb(144, 223, 222) !important;
+  color: black !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.clear-button {
+  background-color: #c1dedc !important;
+  color: black !important;
+  margin-left: 10px !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+}
