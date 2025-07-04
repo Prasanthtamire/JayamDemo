@@ -229,7 +229,10 @@ th {
 .table td {
   vertical-align: middle;
   text-align: center;
-      font-size: 12px !important;
+  font-size: 12px !important;
+ color:rgb(107 114 128 / var(--tw-text-opacity, 1));     
+font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
 
 }
 
@@ -269,3 +272,81 @@ th {
   font-size: 16ypx !important;
 }
 
+
+
+
+/* LeaveApplicationPage.css */
+
+.stat-card {
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .stat-card h4 {
+    font-size: 1rem;
+  }
+
+  .stat-card p {
+    font-size: 0.875rem;
+  }
+}
+
+
+
+.unified-input {
+  height: 45px;
+  font-size: 14px;
+  padding-right: 35px; /* space for calendar icon */
+}
+
+.position-relative {
+  position: relative;
+}
+
+.date-icon-inside {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #666;
+  cursor: pointer;
+  z-index: 2;
+}
+
+textarea.unified-input {
+  height: auto;
+  resize: vertical;
+}
+/* Ensures all inputs have the same look */
+.unified-input {
+  height: 45px;
+  font-size: 14px;
+  width: 100%;
+  padding-right: 40px; /* room for icon */
+}
+
+/* Custom Date Input Wrapper */
+.date-input-wrapper {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Calendar Icon Inside Input */
+.calendar-icon-inside {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+}

@@ -198,14 +198,14 @@ const Leave: React.FC = () => {
           </h2>
         </div>
         
-        <motion.button
+        {/* <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg hover:shadow-lg transition-all duration-200"
         >
           <Plus className="w-4 h-4" />
           <span>Apply Leave</span>
-        </motion.button>
+        </motion.button> */}
       </motion.div>
 
       {/* Stats Grid */}

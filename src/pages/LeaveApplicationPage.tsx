@@ -1,24 +1,18 @@
 import React, { useState } from "react";
 import "../css/LeaveApplicationPage.css";
+import "../css/CustomDatePicker.css";
 import TablePagination from "@mui/material/TablePagination";
-import {
-  FaHeartbeat,
-  FaUserCheck,
-  FaPlaneDeparture,
-  FaGift,
-} from "react-icons/fa";
+import { Clock, CheckCircle2, XCircle, User,  } from "lucide-react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import StatsCard from "../components/StatsCard";
 
 const LeaveApplicationPage = () => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
-
-  const leaveStats = [
-    { icon: <FaHeartbeat />, type: "Sick Leave", used: 3, total: 12 },
-    { icon: <FaPlaneDeparture />, type: "Casual Leave", used: 2, total: 8 },
-    { icon: <FaUserCheck />, type: "Paid Leave", used: 5, total: 10 },
-    { icon: <FaGift />, type: "Earned Leave", used: 1, total: 6 },
-  ];
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
   const appliedLeaves = [
     {
@@ -63,6 +57,41 @@ const LeaveApplicationPage = () => {
     },
   ];
 
+  const leaveStats = [
+    {
+      title: "Casual Leave",
+      value: 12,
+      used: 3,
+      icon: Clock,
+      changeType: "neutral" as const,
+      gradient: "from-orange-500 to-yellow-500",
+    },
+    {
+      title: "Sick Leave",
+      value: 45,
+      used: 15,
+      icon: CheckCircle2,
+      changeType: "increase" as const,
+      gradient: "from-green-500 to-emerald-500",
+    },
+    {
+      title: "Earned Leave",
+      value: 18,
+      used: 6,
+      icon: User,
+      changeType: "neutral" as const,
+      gradient: "from-blue-500 to-cyan-500",
+    },
+    {
+      title: "Maternity Leave",
+      value: 3,
+      used: 1,
+      icon: XCircle,
+      changeType: "decrease" as const,
+      gradient: "from-red-500 to-pink-500",
+    },
+  ];
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -84,33 +113,37 @@ const LeaveApplicationPage = () => {
   return (
     <div className="leave-page container">
       <div className="heading-with-line">
+        <h2 className="stat-value" style={{ marginBottom: "0px" }}>
+          Leave Statistics
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
+        {leaveStats.map((stat, index) => (
+          <StatsCard key={stat.title} {...stat} delay={index * 0.1} />
+        ))}
+      </div>
+
+      <div className="heading-with-line">
         <h2 className="stat-value">Leave Application</h2>
       </div>
 
-      <div className="card apply-card mb-5">
+      <div className="card apply-card mb-5" style={{ background: "#f1f5f9" }}>
         <div className="card-body">
           <form className="row g-3">
             <div className="col-12 col-md-4">
               <label className="form-label">Employee Code</label>
-              <input
-                type="text"
-                className="form-control"
-                value="EMP001"
-                disabled
-              />
+              <input type="text" className="form-control custom-date-input" value="EMP001" disabled />
             </div>
+
             <div className="col-12 col-md-4">
               <label className="form-label">Employee Name</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter name"
-                disabled
-              />
+              <input type="text" className="form-control custom-date-input" placeholder="Enter name" disabled />
             </div>
+
             <div className="col-12 col-md-4">
               <label className="form-label">Leave Type</label>
-              <select className="form-select">
+              <select className="form-select custom-date-input">
                 <option value="" disabled>
                   Select
                 </option>
@@ -120,17 +153,38 @@ const LeaveApplicationPage = () => {
                 <option>Earned Leave</option>
               </select>
             </div>
+
+            {/* Start Date */}
             <div className="col-12 col-md-4">
               <label className="form-label">Start Date</label>
-              <input type="date" className="form-control" />
+              <div className="date-picker-wrapper">
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  placeholderText="Select Start Date"
+                  className="form-control"
+                  dateFormat="dd-MM-yyyy"
+                />
+              </div>
             </div>
+
+            {/* End Date */}
             <div className="col-12 col-md-4">
               <label className="form-label">End Date</label>
-              <input type="date" className="form-control" />
+              <div className="date-picker-wrapper">
+                <DatePicker
+                  selected={endDate}
+                  onChange={(date) => setEndDate(date)}
+                  placeholderText="Select End Date"
+                  className="form-control"
+                  dateFormat="dd-MM-yyyy"
+                />
+              </div>
             </div>
+
             <div className="col-12 col-md-4">
               <label className="form-label">Half Day</label>
-              <select className="form-select">
+              <select className="form-select custom-date-input">
                 <option value="" disabled>
                   Select
                 </option>
@@ -138,16 +192,18 @@ const LeaveApplicationPage = () => {
                 <option>Second Half</option>
               </select>
             </div>
+
             <div className="col-12 col-md-4">
               <label className="form-label">Reason</label>
               <textarea
-                className="form-control"
-                rows="3"
+                className="form-control custom-date-input"
+                rows={3}
                 placeholder="Reason for leave"
               />
             </div>
+
             <div className="col-12">
-              <button type="submit" className=" save-button">
+              <button type="submit" className="save-button">
                 Apply
               </button>
             </div>
@@ -156,30 +212,10 @@ const LeaveApplicationPage = () => {
       </div>
 
       <div className="heading-with-line">
-        <h2 className="stat-value">Leave Statistics</h2>
-      </div>
-      <div className="row g-3 mb-4">
-        {leaveStats.map((stat, index) => (
-          <div className="col-12 col-md-3" key={index}>
-            <div className="card stat-card h-100">
-              <div className="card-body d-flex align-items-center">
-                <div className="me-3 stat-icon">{stat.icon}</div>
-                <div>
-                  <h5 className="card-title mb-1">{stat.type}</h5>
-                  <p className="card-text mb-0">
-                    <strong>{stat.used}</strong> / {stat.total} Used
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="heading-with-line">
         <h2 className="stat-value">Applied Leaves </h2>
       </div>
-      <div className="card applied-leaves-card mt-2">
+
+      <div className="card applied-leaves-card mt-2" style={{ background: "#f1f5f9" }}>
         <div className="card-body">
           <div className="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
             <input
