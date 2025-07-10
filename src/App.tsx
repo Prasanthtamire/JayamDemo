@@ -24,6 +24,7 @@ import Languages from './Masters/Languages';
 import LeavesCode from './Masters/LeavesCode';
 import Employeerelatives from './Masters/Employeesrelatives';
 import LeaveApplication from './pages/LeaveApplicationPage';
+// import Paycreation from './pages/Paycategorycreation';
 
 
 
@@ -57,6 +58,8 @@ function App() {
             <Route path="/languages" element={ <Layout> <Languages /> </Layout>   } />
             <Route path="/LeavesCode" element={ <Layout> <LeavesCode /> </Layout>   } />
             <Route path="/Employeerelatives" element={ <Layout> <Employeerelatives /> </Layout>   } />
+            {/* <Route path="/payroll/Paycategorycreation" element={ <Layout> <Paycreation /> </Layout>   } /> */}
+
       </Routes>
       </AnimatePresence>
       </div>

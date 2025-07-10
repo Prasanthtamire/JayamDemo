@@ -120,7 +120,7 @@
   flex-wrap: wrap;
 }
 .heading-with-line {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   gap: 0.75rem;
   padding-left: 0.75rem;

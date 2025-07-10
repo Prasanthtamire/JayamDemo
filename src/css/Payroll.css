@@ -1,0 +1,197 @@
+.payroll-container {
+  /* padding: 20px; */
+}
+
+.heading-with-line {
+  border-left: 4px solid #007bff;
+  padding-left: 12px;
+  margin-bottom: 20px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+.glass-card {
+    border-radius: 4px !important;
+}
+.payroll-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.payroll-table th,
+.payroll-table td {
+  padding: 12px;
+  border: 1px solid #3e658d;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.payroll-table th {
+      background-color: #3e658d;
+    font-weight: 600;
+    color: white;
+}
+
+.form-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.icon-button {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size:12px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color:white;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 14px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 4px;
+  gap: 8px;
+  cursor: pointer;
+}
+.form-buttons{
+  margin-top: 20px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 4px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.label-count{
+  font-size: 13px !important;
+}
+.add-row-button {
+  margin-top: 10px;
+  padding: 6px 14px;
+  font-size: 14px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Table container with horizontal scroll */
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* Style scrollbar for small size (works in WebKit browsers like Chrome, Safari) */
+.table-wrapper::-webkit-scrollbar {
+  height: 1px; /* Scrollbar thickness */
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 2px;
+}
+.save-button1 {
+    background-color: #3e658d !important;
+    margin-right: 10px !important;
+    text-transform: none !important;
+    font-family: 'Poppins', sans-serif !important;
+    height: 32px !important;
+    width: 117px !important;
+    color: rgb(255, 255, 255) !important;
+    border-radius: 5px !important;
+    font-size: 16px !important;
+    margin-top: 10px;
+        display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 13px  !important;
+}
+.save-addbutton {
+    background-color: #3e658d !important;
+    margin-right: 10px !important;
+    text-transform: none !important;
+    font-family: 'Poppins', sans-serif !important;
+    height: 32px !important;
+    width: 56px !important;
+    color: rgb(255, 255, 255) !important;
+    border-radius: 5px !important;
+    font-size: 16px !important;
+    margin-top: 10px;
+        display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 13px  !important;
+}
+.save-button {
+    background-color: #3e658d !important;
+    margin-right: 10px !important;
+    text-transform: none !important;
+    font-family: 'Poppins', sans-serif !important;
+    height: 32px !important;
+    width: 64px !important;
+    color: rgb(255, 255, 255) !important;
+    border-radius: 5px !important;
+    font-size: 14px !important;
+}
+/* For Firefox */
+.table-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .payroll-table {
+    font-size: 14px;
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
+}
+.table-container::-webkit-scrollbar {
+  height: 1px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 2px;
+}
+
+.table-container {
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+}

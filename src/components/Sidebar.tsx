@@ -85,7 +85,7 @@ const menuItems = [
     path: '/payroll',
     submenu: [
       { title: 'Salary Management', path: '/payroll' },
-      // { title: 'Payslips', path: '/payroll/payslips' },
+      { title: 'Pay Category creation', path: '/payroll/Paycategorycreation' },
       // { title: 'Bonus & Incentives', path: '/payroll/bonus' },
     ],
   },
@@ -293,7 +293,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   <img
   src={profileImage}
   alt="Profile"
-  className="profile-image"
+  className="profile-image1"
 />
 
 

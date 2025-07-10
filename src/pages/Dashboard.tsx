@@ -2,8 +2,21 @@ import "../css/ProfilePage.css";
 import  { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import '../css/Dashboard.css';
 // import profileImage from '../images/Womendummy.jpg';
 
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+  Tooltip,
+  Legend,
+  Area,
+  AreaChart,
+} from "recharts";
 import { UserCheck, Clock, LogOut, UserX, CalendarDays } from "lucide-react";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -87,6 +100,7 @@ const EmployeeDashboard = () => {
       checkOut: "17:20",
     },
   ];
+
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleView = () => {
@@ -94,6 +108,34 @@ const EmployeeDashboard = () => {
     const year = selectedDate.getFullYear();
     alert(`Selected: ${month} ${year}`);
     };
+
+ const leaveData = [
+    { month: "Jan", approved: 12, pending: 3, rejected: 1, total: 16 },
+    { month: "Feb", approved: 8, pending: 2, rejected: 0, total: 10 },
+    { month: "Mar", approved: 15, pending: 4, rejected: 2, total: 21 },
+    { month: "Apr", approved: 10, pending: 1, rejected: 1, total: 12 },
+    { month: "May", approved: 18, pending: 5, rejected: 1, total: 24 },
+    { month: "Jun", approved: 14, pending: 2, rejected: 0, total: 16 },
+  ];
+      const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip">
+          <p className="tooltip-label">{`Month: ${label}`}</p>
+          {payload.map((entry: any, index: number) => (
+            <p
+              key={index}
+              className="tooltip-item"
+              style={{ color: entry.color }}
+            >
+              {`${entry.dataKey}: ${entry.value}`}
+            </p>
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
   return (
     <div className="dashboard-container">
       <div className="employee-card">
@@ -143,8 +185,8 @@ const EmployeeDashboard = () => {
             </div>
           </div>
         </div>
-
-        <div className="employee-stats">
+      
+      </div> <div className="employee-stats">
           <div className="stat-box stat-attendance">
             <div className="stat-icon">
               <UserCheck size={24} />
@@ -186,8 +228,79 @@ const EmployeeDashboard = () => {
           </div>
         </div>
 
-       
+    {/* Leave Statistics Chart */}
+      <div className="chart-section">
+        <div className="chart-card">
+   <div className="heading-with-line">
+            <h2 className="stat-value">Leave Statics Overview</h2>
+          </div>          <ResponsiveContainer width="100%" height={350}>
+            <AreaChart data={leaveData}>
+              <defs>
+                <linearGradient
+                  id="approvedGradient"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="1"
+                >
+                  <stop offset="5%" stopColor="#10b981" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#10b981" stopOpacity={0.1} />
+                </linearGradient>
+                <linearGradient
+                  id="pendingGradient"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="1"
+                >
+                  <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#f59e0b" stopOpacity={0.1} />
+                </linearGradient>
+                <linearGradient
+                  id="rejectedGradient"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="1"
+                >
+                  <stop offset="5%" stopColor="#ef4444" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#ef4444" stopOpacity={0.1} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+              <XAxis dataKey="month" stroke="#6b7280" />
+              <YAxis stroke="#6b7280" />
+              <Tooltip content={<CustomTooltip />} />
+              <Legend />
+              <Area
+                type="monotone"
+                dataKey="approved"
+                stackId="1"
+                stroke="#10b981"
+                fill="url(#approvedGradient)"
+                name="Approved"
+              />
+              <Area
+                type="monotone"
+                dataKey="pending"
+                stackId="1"
+                stroke="#f59e0b"
+                fill="url(#pendingGradient)"
+                name="Pending"
+              />
+              <Area
+                type="monotone"
+                dataKey="rejected"
+                stackId="1"
+                stroke="#ef4444"
+                fill="url(#rejectedGradient)"
+                name="Rejected"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
       </div>
+
 
       {/* Modal with Attendance Details */}
       <Modal
@@ -299,6 +412,8 @@ const EmployeeDashboard = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+
     </div>
   );
 };
