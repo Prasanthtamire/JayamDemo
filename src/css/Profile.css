@@ -72,10 +72,10 @@
     background-color: #C1DEDC; /* Darker primary color for active tab */
   }
   
-  .profile-info {
+  /* .profile-info {
     margin-left: 32px;
     margin-top: -26px;
-}
+} */
   
   .profile-name {
     font-size: 15px;

@@ -8,7 +8,7 @@
 }
 
 .employee-card {
-  background: #ffffff;
+  /* background: #ffffff; */
   border-radius: 12px;
   padding: 10px;
   margin-bottom: 10px;
@@ -21,6 +21,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 .top-bar select,
@@ -130,11 +131,7 @@
 .modal-header{
   background-color: #adc4e7 !important;
 }
-.stat-value {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1f2937;
-}
+
 
 .stat-box {
   display: flex;
@@ -162,11 +159,7 @@
   flex-direction: column;
 }
 
-.stat-value {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1f2937;
-}
+
 
 .stat-label {
   font-size: 0.875rem;
@@ -232,7 +225,7 @@
 }
 
 .stat-box {
-  background: #cbd9d9;
+  background: white;
   padding: 18px;
   border-radius: 10px;
   text-align: center;
@@ -394,7 +387,7 @@
 }
 
 .stat-box {
-  background: #f1f5f9;
+  background:white !important;
   padding: 1rem;
   border-radius: 10px;
   text-align: center;

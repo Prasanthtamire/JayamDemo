@@ -24,8 +24,16 @@ import Languages from './Masters/Languages';
 import LeavesCode from './Masters/LeavesCode';
 import Employeerelatives from './Masters/Employeesrelatives';
 import LeaveApplication from './pages/LeaveApplicationPage';
-// import Paycreation from './pages/Paycategorycreation';
+import Paycreation from './pages/Paycategorycreation';
+import OrganizationChart from './pages/OrganizationChart';
+import EmployeeQualification from './pages/Employeequalification';
+import EmployeeNominee from './pages/Employeenomineedetails';
+import EmployeeLeaves from './pages/EmployeeLeaves';
+import Employeeexperience from './pages/EmployeeExperience';
+import Employeefamilydetails from './pages/EmployeeFamilydetails';
+import Employeeinsurance from './pages/EmployeeInsurancedetails';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -57,8 +65,17 @@ function App() {
             <Route path="/band" element={ <Layout> <Band /> </Layout>   } />
             <Route path="/languages" element={ <Layout> <Languages /> </Layout>   } />
             <Route path="/LeavesCode" element={ <Layout> <LeavesCode /> </Layout>   } />
+            <Route path="/employeeleaves" element={ <Layout> <EmployeeLeaves /> </Layout>   } />
+            <Route path="/Employee_experience" element={ <Layout> <Employeeexperience /> </Layout>   } />
+            <Route path="/Employee_family_Details" element={ <Layout> <Employeefamilydetails /> </Layout>   } />
+            <Route path="/Employee_insurance_details" element={ <Layout> <Employeeinsurance /> </Layout>   } />
+
+
             <Route path="/Employeerelatives" element={ <Layout> <Employeerelatives /> </Layout>   } />
-            {/* <Route path="/payroll/Paycategorycreation" element={ <Layout> <Paycreation /> </Layout>   } /> */}
+            <Route path="/payroll/Paycategorycreation" element={ <Layout> <Paycreation /> </Layout>   } />
+            <Route path="/organizationchart" element={ <Layout> <OrganizationChart /> </Layout>   } />
+            <Route path="/EmployeeQualification" element={ <Layout> <EmployeeQualification /> </Layout>   } />
+            <Route path="/EmployeeNominee" element={ <Layout> <EmployeeNominee /> </Layout>   } />
 
       </Routes>
       </AnimatePresence>
@@ -68,3 +85,71 @@ function App() {
 }
 
 export default App;
+
+// import React, { useState } from "react";
+// import FlashCard from "../src/pages/PopupModal";
+
+// const App = () => {
+//   const [flash, setFlash] = useState<{
+//     type: "success" | "error" | "warning";
+//     show: boolean;
+//   }>({
+//     type: "success",
+//     show: false,
+//   });
+
+//   const showFlash = (type: "success" | "error" | "warning") => {
+//     setFlash({ type, show: true });
+//   };
+
+//   const handleClose = () => {
+//     setFlash((prev) => ({ ...prev, show: false }));
+//   };
+
+//   return (
+//     <div style={{ padding: "60px", textAlign: "center" }}>
+//       <div style={{ marginBottom: "20px" }}>
+//         <button className="flash-action success" onClick={() => showFlash("success")}>
+//           Show Success
+//         </button>{" "}
+//         <button className="flash-action error" onClick={() => showFlash("error")}>
+//           Show Error
+//         </button>{" "}
+//         <button className="flash-action warning" onClick={() => showFlash("warning")}>
+//           Show Warning
+//         </button>
+//       </div>
+
+//       {flash.show && (
+//         <FlashCard
+//           type={flash.type}
+//           title={
+//             flash.type === "success"
+//               ? "Successful"
+//               : flash.type === "error"
+//               ? "Error"
+//               : "Warning"
+//           }
+//           message={
+//             flash.type === "success"
+//               ? "You have approved the claim."
+//               : flash.type === "error"
+//               ? "Something went wrong."
+//               : "Please check the form before submitting."
+//           }
+//           buttonText={
+//             flash.type === "success"
+//               ? "Done"
+//               : flash.type === "error"
+//               ? "Try Again"
+//               : "OK"
+//           }
+//           onClose={handleClose}
+//         />
+//       )}
+//     </div>
+//   );
+// };
+
+// export default App;
+

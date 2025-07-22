@@ -1,0 +1,78 @@
+/* Employeequalification.css */
+
+.heading-with-line {
+  /* border-bottom: 2px solid #e2e8f0; */
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8e98ad;
+}
+
+.custom-font {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  padding: 0.5rem 1rem;
+  background-color: #f1f5f9;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.tab-btn.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+.form-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.date-picker {
+  padding: 0.5rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.employee-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}

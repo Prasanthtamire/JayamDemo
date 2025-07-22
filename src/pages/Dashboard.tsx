@@ -1,13 +1,9 @@
 import "../css/ProfilePage.css";
 import  { useState } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import '../css/Dashboard.css';
-// import profileImage from '../images/Womendummy.jpg';
+import { Calendar, ClipboardList, Mail, Phone, UserCheck, Droplets } from 'lucide-react';
 
 import {
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -17,10 +13,12 @@ import {
   Area,
   AreaChart,
 } from "recharts";
-import { UserCheck, Clock, LogOut, UserX, CalendarDays } from "lucide-react";
+import {  Clock, LogOut, UserX, CalendarDays } from "lucide-react";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import "react-datepicker/dist/react-datepicker.css";
+import '../css/Dashboard.css';
+import '../css/DashboardEmployee.css';
 const EmployeeDashboard = () => {
   const [showAttendanceModal, setShowAttendanceModal] = useState(false);
   const handleOpenAttendance = () => setShowAttendanceModal(true);
@@ -103,6 +101,55 @@ const EmployeeDashboard = () => {
 
   const [selectedDate, setSelectedDate] = useState(new Date());
 
+ const employeeData = {
+    name: 'Prasanth Tamire',
+    email: 't.prasanth@jayamsolutions.com',
+    phone: '8247595118',
+    reportingManager: 'Sarah Johnson',
+    bloodGroup: 'O+',
+    dateOfJoining: '03-01-2023',
+    profileImage: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150'
+  };
+
+  const teamMembers = [
+    {
+      id: 1,
+      name: 'Sarah Johnson',
+      designation: 'Team Lead',
+      profileImage: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100'
+    },
+    {
+      id: 2,
+      name: 'Mike Chen',
+      designation: 'Senior Developer',
+      profileImage: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100'
+    },
+    {
+      id: 3,
+      name: 'Emily Davis',
+      designation: 'UI/UX Designer',
+      profileImage: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100'
+    },
+    {
+      id: 4,
+      name: 'Alex Rodriguez',
+      designation: 'Backend Developer',
+      profileImage: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=100'
+    },
+    {
+      id: 5,
+      name: 'Lisa Wang',
+      designation: 'Product Manager',
+      profileImage: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=100'
+    },
+    {
+      id: 6,
+      name: 'David Kim',
+      designation: 'DevOps Engineer',
+      profileImage: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=100'
+    }
+  ];
+
   const handleView = () => {
     const month = selectedDate.toLocaleString("default", { month: "long" });
     const year = selectedDate.getFullYear();
@@ -116,6 +163,12 @@ const EmployeeDashboard = () => {
     { month: "Apr", approved: 10, pending: 1, rejected: 1, total: 12 },
     { month: "May", approved: 18, pending: 5, rejected: 1, total: 24 },
     { month: "Jun", approved: 14, pending: 2, rejected: 0, total: 16 },
+    { month: "Jul", approved: 12, pending: 3, rejected: 1, total: 16 },
+    { month: "Aug", approved: 8, pending: 2, rejected: 0, total: 10 },
+    { month: "Sep", approved: 15, pending: 4, rejected: 2, total: 21 },
+    { month: "Oct", approved: 10, pending: 1, rejected: 1, total: 12 },
+    { month: "Nov", approved: 18, pending: 5, rejected: 1, total: 24 },
+    { month: "Dec", approved: 14, pending: 2, rejected: 0, total: 16 },
   ];
       const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
@@ -136,10 +189,14 @@ const EmployeeDashboard = () => {
     }
     return null;
   };
+
   return (
     <div className="dashboard-container">
-      <div className="employee-card">
-        <div className="top-bar">
+     
+     <div className="top-section">
+        {/* Employee Profile Card */}
+        <div className="profile-card">
+          <div className="top-bar">
           <div className="heading-with-line">
             <h2 className="stat-value">Employee Details</h2>
           </div>
@@ -149,44 +206,76 @@ const EmployeeDashboard = () => {
             </button>
           </div>
         </div>
+          <div className="profile-header">
+           
+            <div className="profile-image-container">
+              <img 
+                src={employeeData.profileImage} 
+                alt="Profile" 
+                className="profile-image"
+              />
+              <div className="profile-status"></div>
+            </div>
+            <div className="profile-info">
+              <h2 className="profile-name">{employeeData.name}</h2>
+              <p className="profile-role">Software Developer</p>
+            </div>
+          </div>
 
-        <div className="employee-info">
-          {/* <img src={profileImage} alt="Profile" className="profile-pic" /> */}
-          <img
-            src="/src/images/Womendummy.jpg"
-            alt="Profile"
-            className="profile-pic"
-          />
-
-          <div className="employee-meta">
-            <div className="info-row">
-              <span className="label">Name:</span>
-              <span className="value">Prasanth</span>
+          <div className="profile-details">
+            <div className="detail-item">
+              <Mail className="detail-icon" />
+              <span className="detail-text">{employeeData.email}</span>
             </div>
-            <div className="info-row">
-              <span className="label">Role:</span>
-              <span className="value">UX Design</span>
+            <div className="detail-item">
+              <Phone className="detail-icon" />
+              <span className="detail-text">{employeeData.phone}</span>
             </div>
-            <div className="info-row">
-              <span className="label">Phone:</span>
-              <span className="value">123 4567-8900</span>
+            <div className="detail-item">
+              <UserCheck className="detail-icon" />
+              <span className="detail-text">{employeeData.reportingManager}</span>
             </div>
-            <div className="info-row">
-              <span className="label">Reporting Manager:</span>
-              <span className="value">Jagadeesh</span>
+            <div className="detail-item">
+              <Droplets className="detail-icon" />
+              <span className="detail-text">Blood Group: {employeeData.bloodGroup}</span>
             </div>
-            <div className="info-row">
-              <span className="label">Date of Joining:</span>
-              <span className="value">11-02-2021</span>
-            </div>
-            <div className="info-row">
-              <span className="label">Email:</span>
-              <span className="value">Prasanth@gmail.com</span>
+            <div className="detail-item">
+              <Calendar className="detail-icon" />
+              <span className="detail-text">Joined: {employeeData.dateOfJoining}</span>
             </div>
           </div>
         </div>
+
+        {/* Team Members */}
+        <div className="team-section">
+ <div className="heading-with-line">
+            <h2 className="stat-value">My Team</h2>
+          </div>          <div className="team-scroll">
+            {teamMembers.map((member) => (
+              <div key={member.id} className="team-member-card">
+  <img 
+    src={member.profileImage} 
+    alt={member.name}
+    className="team-member-image"
+  />
+  <div className="team-member-details-row">
+    <div className="team-text">
+      <h4 className="team-member-name">{member.name}</h4>
+      <p className="team-member-designation">{member.designation}</p>
+    </div>
+    <div className="team-icons">
+      <Calendar className="team-icon" />
+      <ClipboardList className="team-icon" />
+    </div>
+  </div>
+</div>
+
+            ))}
+          </div>
+        </div>
+      </div>
       
-      </div> <div className="employee-stats">
+       <div className="employee-stats">
           <div className="stat-box stat-attendance">
             <div className="stat-icon">
               <UserCheck size={24} />

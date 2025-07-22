@@ -1,0 +1,89 @@
+/* Base styles for the date picker input */
+.custom-datepicker11 input {
+  width: 100%;
+  height: 40px;
+  padding: 10px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #212529;
+  background-color: #f9f9f9; /* light neutral background */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* On focus */
+.custom-datepicker11 input:focus {
+  border-color: #0d6efd;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .custom-datepicker11 input {
+    height: 36px;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .custom-datepicker11 input {
+    height: 34px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+/* Style the calendar popup */
+.react-datepicker {
+  background-color: #8b1818; /* light background */
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: auto;
+  max-width: 100%;
+  z-index: 9999; /* ensure it's above other components */
+}
+
+/* Adjust calendar on small screens */
+@media (max-width: 768px) {
+  .react-datepicker {
+    font-size: 14px;
+    padding: 8px;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .react-datepicker {
+    font-size: 13px;
+    padding: 6px;
+    width: 100% !important;
+  }
+}
+
+/* Adjust day names and numbers */
+.react-datepicker__day,
+.react-datepicker__day-name {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  margin: 0.2rem;
+  font-weight: 500;
+}
+
+/* Highlight selected day */
+.react-datepicker__day--selected {
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 50%;
+}
+
+/* Optional: today highlight */
+.react-datepicker__day--today {
+  font-weight: bold;
+  border: 1px solid #0d6efd;
+}

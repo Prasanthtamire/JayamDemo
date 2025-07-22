@@ -1,97 +1,6 @@
-import React, { useState } from "react";
-import {
-  Avatar,
-  Card,
-  CardContent,
-  Button,
-  Typography,
-} from "@mui/material";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Tabs from "react-bootstrap/Tabs";
-import Tab from "react-bootstrap/Tab";
-import "../css/Profile.css";
-import "../css/TabsStyles.css";
-
-const Addemployee: React.FC = () => {
-  const [profilePhoto, setProfilePhoto] = useState<string>(
-    "https://res.cloudinary.com/dijjxaphj/image/upload/v1752660863/dummy-profile-pic_pzpnk6.jpg"
-  );
-  const [signature, setSignature] = useState<string>("");
-  const [expanded, setExpanded] = useState<string | false>(false);
-
-  const handleAccordionChange = (panel: string) => (
-    _event: React.SyntheticEvent,
-    isExpanded: boolean
-  ) => {
-    setExpanded(isExpanded ? panel : false);
-  };
-
-  const handlePhotoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const result = reader.result;
-        if (typeof result === "string") {
-          setProfilePhoto(result);
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleSignatureUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const result = reader.result;
-        if (typeof result === "string") {
-          setSignature(result);
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  return (
-    <div className="profile-container">
-      <Card className="profile-card">
-        <CardContent>
-          <div className="profile-header">
-            <div className="profile-photo-container">
-              <Avatar
-                alt="Leslie Alexander"
-                src={profilePhoto}
-                className="profile-avatar"
-              />
-              <Button
-                variant="contained"
-                component="label"
-                className="upload-photo-button"
-              >
-                Edit Photo
-                <input
-                  type="file"
-                  accept="image/*"
-                  hidden
-                  onChange={handlePhotoUpload}
-                />
-              </Button>
-            </div>
-            <div className="profile-info">
-              <Typography className="profile-name">Leslie Alexander</Typography>
-              <Typography variant="body2" className="profile-details">
-                Male • 32 yrs
-              </Typography>
-            </div>
-          </div>
-
+{/* Bootstrap Tabs */}
           <Tabs defaultActiveKey="employee" className="custom-tabs mb-3" fill>
-              <Tab eventKey="employee" title="Employee Details">
+           <Tab eventKey="employee" title="Employee Details">
               <div className="row mb-3">
                
 
@@ -456,7 +365,7 @@ const Addemployee: React.FC = () => {
                 </div>
               
             </Tab>
- <Tab eventKey="personalDetails" title="Personal Details">
+            <Tab eventKey="personalDetails" title="Personal Details">
               
                <div className="row mb-3">
 <div className="col-sm-6 col-md-3 mb-3">
@@ -687,186 +596,210 @@ const Addemployee: React.FC = () => {
                     placeholder="Enter"
                   />
                 </div>
-              
+                 <label htmlFor="presentAddressCheck" className="form-check-label">
+    <h4 className="h6 mb-1">Present Address</h4>
+  </label><div className="col-sm-6 col-md-3 mb-3">
+                  <label htmlFor="employeeCode" className="form-label">
+                    State  <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id=""
+                    className="form-control"
+                    placeholder="Enter"
+                  />
+                </div>
+<div className="col-sm-6 col-md-3 mb-3">
+                  <label htmlFor="employeeCode" className="form-label">
+                    Disirict  <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id=""
+                    className="form-control"
+                    placeholder="Enter"
+                  />
+                </div>
+                
+ <div className="col-sm-6 col-md-3 mb-2">
+                    <label htmlFor="name" className="form-label">
+                        City<span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      className="form-control"
+                      placeholder="Enter name"
+                    />
+                  </div>
+                  <div className="col-sm-6 col-md-3 mb-3">
+                  <label htmlFor="employeeCode" className="form-label">
+                    PinCode  <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id=""
+                    className="form-control"
+                    placeholder="Enter"
+                  />
+                </div>
 
                 
+<div className="col-sm-12 col-md-12 mb-2">
+  <label htmlFor="remarks" className="form-label">
+    Present address<span className="text-danger">*</span>
+  </label>
+  <textarea
+    id="remarks"
+    className="form-control"
+    placeholder="Enter remarks"
+    rows={3} // You can adjust the number of visible rows
+    required
+  ></textarea>
+</div>  
+<div className="d-flex align-items-center mb-2">
+  <input
+    type="checkbox"
+    id="presentAddressCheck"
+    className="form-check-input me-2"
+  />
+  <label htmlFor="presentAddressCheck" className="form-check-label">
+    <h1 className="h6 mb-1">Permanent  Address</h1>
+  </label>
+</div>
 
+<div className="col-sm-6 col-md-3 mb-3">
+                  <label htmlFor="employeeCode" className="form-label">
+                    State  <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id=""
+                    className="form-control"
+                    placeholder="Enter"
+                  />
+                </div>
+<div className="col-sm-6 col-md-3 mb-3">
+                  <label htmlFor="employeeCode" className="form-label">
+                    Disirict  <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id=""
+                    className="form-control"
+                    placeholder="Enter"
+                  />
+                </div>
+                
+ <div className="col-sm-6 col-md-3 mb-2">
+                    <label htmlFor="name" className="form-label">
+                        City<span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      className="form-control"
+                      placeholder="Enter name"
+                    />
+                  </div>
+                  <div className="col-sm-6 col-md-3 mb-3">
+                  <label htmlFor="employeeCode" className="form-label">
+                    PinCode  <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id=""
+                    className="form-control"
+                    placeholder="Enter"
+                  />
+                </div>
+<div className="col-sm-12 col-md-12 mb-2">
+  <label htmlFor="remarks" className="form-label">
+    Permanent  address<span className="text-danger">*</span>
+  </label>
+  <textarea
+    id="remarks"
+    className="form-control"
+    placeholder="Enter remarks"
+    rows={3} // You can adjust the number of visible rows
+    required
+  ></textarea>
+</div>
                 </div>
              
             </Tab>
 
-          <Tab eventKey="address" title="Address">
-  <div className="row mb-3">
-    <div className="heading-with-line">
-      <h2 className="stat-value">Present Address</h2>
-    </div>
+        <Tab eventKey="language" title="Languages">
+  <div>
+    <Accordion
+      expanded={expanded === "panel1"}
+      onChange={handleAccordionChange("panel1")}
+    >
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+        sx={{ backgroundColor: "#4CAF50", color: "#fff" }}
+      >
+        <Typography className="Mainheading">Languages</Typography>
+      </AccordionSummary>
 
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="presentCountry" className="form-label">
-        Country <span className="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="presentCountry"
-        className="form-control"
-        placeholder="Enter country"
-      />
-    </div>
-
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="presentState" className="form-label">
-        State <span className="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="presentState"
-        className="form-control"
-        placeholder="Enter state"
-      />
-    </div>
-
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="presentDistrict" className="form-label">
-        District <span className="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="presentDistrict"
-        className="form-control"
-        placeholder="Enter district"
-      />
-    </div>
-
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="presentCity" className="form-label">
-        City <span className="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="presentCity"
-        className="form-control"
-        placeholder="Enter city"
-      />
-    </div>
-
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="presentPincode" className="form-label">
-        Pincode
-      </label>
-      <input
-        type="number"
-        id="presentPincode"
-        className="form-control"
-        placeholder="Enter pincode"
-      />
-    </div>
-
-  <div className="col-sm-6 col-md-6 mb-3">
-  <label htmlFor="presentAddress" className="form-label">
-    Present Address
-  </label>
-  <textarea
-    id="presentAddress"
-    className="form-control"
-    placeholder="Enter full address"
-    rows="3"
-  ></textarea>
-</div>
-
-  </div>
-
-  {/* Checkbox to copy present address */}
-  <div className="row mb-3">
-  <div className="col-md-12 d-flex align-items-center">
-  <input type="checkbox" id="copyAddress" className="form-check-input me-2" />
-  <label htmlFor="copyAddress" className="form-check-label fw-bold">
-    Same as Present Address
-  </label>
-</div>
-
-  </div>
-
-  <div className="row mb-3">
-    <div className="heading-with-line">
-      <h2 className="stat-value">Permanent Address</h2>
-    </div>
-
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="permanentCountry" className="form-label">
-        Country <span className="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="permanentCountry"
-        className="form-control"
-        placeholder="Enter country"
-      />
-    </div>
-
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="permanentState" className="form-label">
-        State <span className="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="permanentState"
-        className="form-control"
-        placeholder="Enter state"
-      />
-    </div>
-
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="permanentDistrict" className="form-label">
-        District <span className="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="permanentDistrict"
-        className="form-control"
-        placeholder="Enter district"
-      />
-    </div>
-
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="permanentCity" className="form-label">
-        City <span className="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="permanentCity"
-        className="form-control"
-        placeholder="Enter city"
-      />
-    </div>
-
-    <div className="col-sm-6 col-md-3 mb-3">
-      <label htmlFor="permanentPincode" className="form-label">
-        Pincode
-      </label>
-      <input
-        type="number"
-        id="permanentPincode"
-        className="form-control"
-        placeholder="Enter pincode"
-      />
-    </div>
-<div className="col-sm-6 col-md-6 mb-3">
-  <label htmlFor="PermenentAddress" className="form-label">
-  Permenent Address
-  </label>
-  <textarea
-    id="PermenentAddress"
-    className="form-control"
-    placeholder="Enter full address"
-    rows="3"
-  ></textarea>
-</div>
-
+      <AccordionDetails>
+        <div className="table-responsive">
+          <table className="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th className="text-name">Language Code</th>
+                <th className="text-name">Language</th>
+                <th className="text-name">Write</th>
+                <th className="text-name">Read</th>
+                <th className="text-name">Speak</th>
+              </tr>
+            </thead>
+            <tbody className="text-cls">
+              {[
+                { code: "ENG", name: "English" },
+                { code: "TML", name: "Tamil" },
+                { code: "SPN", name: "Spanish" },
+              ].map((lang, index) => (
+                <tr key={index}>
+                  <td>{lang.code}</td>
+                  <td>{lang.name}</td>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </AccordionDetails>
+    </Accordion>
   </div>
 </Tab>
 
-            
-            <Tab eventKey="language" title="Languages">
+            <Tab eventKey="securityDeposit" title="Security Deposit">
+           <div className="col-sm-6 col-md-3 mb-3">
+                <label htmlFor="location" className="form-label">
+                Payment Mode <span className="text-danger">*</span>
+                </label>
+                <select id="location" className="form-select">
+                <option value="Cash" disabled selected>
+                Select
+                </option>
+                <option value="Hyderabad">Cash</option>
+                <option value="Bangalore">Cheque</option>
+                <option value="Chennai">Bank</option>
+                <option value="Chennai">Demand Draft</option>
+                </select>
+                </div>            </Tab>
+            <Tab eventKey="projects" title="Projects">
               <div>
                 <Accordion
                   expanded={expanded === "panel1"}
@@ -878,35 +811,49 @@ const Addemployee: React.FC = () => {
                     id="panel1a-header"
                     sx={{ backgroundColor: "#4CAF50", color: "#fff" }}
                   >
-                    <Typography className="Mainheading">Languages</Typography>
+                    <Typography className="Mainheading">
+                      Project Details
+                    </Typography>
                   </AccordionSummary>
-
                   <AccordionDetails>
                     <div className="table-responsive">
-                      <table className="table table-bordered table-striped">
+                      <table className="table table-bordered">
                         <thead>
                           <tr>
-                            <th>Language Code</th>
-                            <th>Language</th>
-                            <th>Write</th>
-                            <th>Read</th>
-                            <th>Speak</th>
+                            <th className="text-name">Action</th>
+                            <th className="text-name">Project</th>
+                            <th className="text-name">Manager</th>
+                            <th className="text-name">Remarks</th>
                           </tr>
                         </thead>
                         <tbody>
-                          {[
-                            { code: "ENG", name: "English" },
-                            { code: "TML", name: "Tamil" },
-                            { code: "SPN", name: "Spanish" },
-                          ].map((lang, index) => (
-                            <tr key={index}>
-                              <td>{lang.code}</td>
-                              <td>{lang.name}</td>
-                              <td><input type="checkbox" /></td>
-                              <td><input type="checkbox" /></td>
-                              <td><input type="checkbox" /></td>
-                            </tr>
-                          ))}
+                          <tr>
+                            <td>
+                              <button type="button" className="btn btn-custom">
+                                Add
+                              </button>
+                            </td>
+                            <td className="Text-cls">Annapurna</td>
+                            <td className="Text-cls">John</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button type="button" className="btn btn-custom">
+                                Add
+                              </button>
+                            </td>
+                            <td className="Text-cls">Share</td>
+                            <td className="Text-cls">Jane Smith</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button type="button" className="btn btn-custom">
+                                Add
+                              </button>
+                            </td>
+                            <td className="Text-cls">Spandana</td>
+                            <td className="Text-cls">Mark Lee</td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -914,122 +861,4 @@ const Addemployee: React.FC = () => {
                 </Accordion>
               </div>
             </Tab>
-
-            <Tab eventKey="securityDeposit" title="Security Deposit">
-              <div className="col-sm-6 col-md-3 mb-3">
-                <label htmlFor="location" className="form-label">
-                  Payment Mode <span className="text-danger">*</span>
-                </label>
-                <select id="location" className="form-select" defaultValue="">
-                  <option value="" disabled>
-                    Select
-                  </option>
-                  <option value="Cash">Cash</option>
-                  <option value="Cheque">Cheque</option>
-                  <option value="Bank">Bank</option>
-                  <option value="Demand Draft">Demand Draft</option>
-                </select>
-              </div>
-            </Tab>
-
-            <Tab eventKey="projects" title="Projects">
-              <div>
-                <Accordion
-                  expanded={expanded === "panel2"}
-                  onChange={handleAccordionChange("panel2")}
-                >
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
-                    sx={{ backgroundColor: "#4CAF50", color: "#fff" }}
-                  >
-                    <Typography className="Mainheading">Project Details</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <table className="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Action</th>
-                          <th>Project</th>
-                          <th>Manager</th>
-                          <th>Remarks</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><button className="btn btn-custom">Add</button></td>
-                          <td>Annapurna</td>
-                          <td>John</td>
-                          <td>-</td>
-                        </tr>
-                        <tr>
-                          <td><button className="btn btn-custom">Add</button></td>
-                          <td>Share</td>
-                          <td>Jane Smith</td>
-                          <td>-</td>
-                        </tr>
-                        <tr>
-                          <td><button className="btn btn-custom">Add</button></td>
-                          <td>Spandana</td>
-                          <td>Mark Lee</td>
-                          <td>-</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </AccordionDetails>
-                </Accordion>
-              </div>
-            </Tab>
-
-       
-
-           
           </Tabs>
-        </CardContent>
-
-        <div className="signature-box">
-          <div className="signature-container">
-            <div className="static-signature">
-              <img
-                src={
-                  signature ||
-                  "https://res.cloudinary.com/dijjxaphj/image/upload/v1738399725/handwritten-signature-signed-papers-documents-260nw-2248268539_ewissn.jpg"
-                }
-                alt="Signature"
-                className="signature-image"
-              />
-            </div>
-            <Button
-              variant="contained"
-              component="label"
-              className="Edit-Signature-button"
-            >
-              Edit Signature
-              <input
-                type="file"
-                accept="image/*"
-                hidden
-                onChange={handleSignatureUpload}
-              />
-            </Button>
-          </div>
-        </div>
-
-        <div className="mt-4 d-flex gap-3">
-          <Button variant="contained" className="save-button">
-            Save
-          </Button>
-          <Button variant="contained" className="view-button">
-            View
-          </Button>
-          <Button variant="contained" className="clear-button">
-            Clear
-          </Button>
-        </div>
-      </Card>
-    </div>
-  );
-};
-
-export default Addemployee;

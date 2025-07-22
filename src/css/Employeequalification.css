@@ -1,0 +1,269 @@
+
+.custom-input {
+  width:auto;
+  height: 35px;
+  font-family: 'Poppins', sans-serif;
+}
+.custom-inputtext {
+  width:100px !important;
+  height: 35px !important;
+  font-family: 'Poppins', sans-serif;
+}
+.custom-autocomplete{
+    width:150px;
+  height: 35px;
+  font-family: 'Poppins', sans-serif;
+ 
+}
+.custom-inputdropdown {
+  width: auto;
+  height: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+.custom-inputnumber{
+    width:auto;
+  height: 35px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.custom-font {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #80a2d4;
+}
+
+.icon-pencil {
+  color: #0d6efd;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.icon-pencil:hover {
+  transform: scale(1.2);
+  color: #084298;
+}
+
+.icon-trash {
+  color: red;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.icon-trash:hover {
+  transform: rotate(10deg) scale(1.2);
+  color: darkred;
+}
+
+.custom-datepicker-input {
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-family: inherit;
+  z-index: 99999 !important;
+}
+
+.glass-card {
+   
+    box-shadow: none !important;
+
+}
+td {
+    /* text-align: left; */
+    font-size: 14px !important;
+}
+.text-gray-500 {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
+/* 
+.react-datepicker{
+  font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    background-color:none !important;
+    color: #171718;
+    border: 1px solid #aeaeae;
+    border-radius: 0.3rem;
+    display: inline-block;
+    position: relative;
+    line-height: initial;
+} */
+
+
+
+
+.css-1pzfmz2-MuiInputBase-input-MuiOutlinedInput-input {
+    font: inherit;
+    letter-spacing: inherit;
+    color: rgb(0 0 0 / 87%);
+    padding: 4px 0 5px;
+    border: 0;
+    background: none;
+    height: 14px !important;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    /* min-width: 200px; */
+    width: auto !important;
+    -webkit-animation-name: mui-auto-fill-cancel;
+    animation-name: mui-auto-fill-cancel;
+    -webkit-animation-duration: 10ms;
+    animation-duration: 10ms;
+    padding: 16.5px 14px;
+}
+
+.css-si86to-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+    height: 14px;
+    /* min-height: 1.4375em; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.css-si86to-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+    height: 14px !important;
+    /* min-height: 1.4375em; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+      font-family: 'Poppins', sans-serif !important;
+    font-size:13px;
+}
+.css-1tlcqt-MuiAutocomplete-root .MuiOutlinedInput-root.MuiInputBase-sizeSmall {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    height: 34px;
+    font-size: 13px;
+    /* height: 18px; */
+}
+
+  .button-container {
+  margin: 10px !important;
+}
+
+.save-button {
+  background-color: #359392 !important;
+  color: black !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+  height: 30px !important;
+  width: 50px !important;
+}
+
+.view-button {
+  background: rgb(144, 223, 222) !important;
+  color: black !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+    height: 30px !important;
+      width: 50px !important;
+
+}
+
+.clear-button {
+  background-color: #c1dedc !important;
+  color: black !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+    height: 30px !important;
+      width: 50px !important;
+
+
+}
+@media (max-width: 768px) {
+  .custom-autocomplete {
+    width: 100% !important;
+  }
+
+  .employee-info-container {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .employee-avatar {
+    margin-top: 10px;
+  }
+}
+
+.employee-info-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.custom-input,
+.custom-inputtext {
+  min-width: 150px;
+  width: 100%;
+}
+
+.save-button,
+.clear-button {
+  min-width: 100px;
+}
+
+
+.css-1tlcqt-MuiAutocomplete-root .MuiOutlinedInput-root.MuiInputBase-sizeSmall .MuiAutocomplete-input {
+    padding: 2.5px 4px 2.5px 8px;
+  font-family: 'Poppins', sans-serif !important;
+}
+/* Style the DatePicker input to match TextField */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  height: 32px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  background-color: transparent !important;
+}
+
+.react-datepicker__input-container input:focus {
+  border-color: #1976d2; /* MUI primary color */
+  box-shadow: 0 0 0 1px #1976d2;
+}
+
+/* Optional: Align font with rest of app */
+.react-datepicker__input-container input::placeholder {
+  color: #aaa;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Optional: Style the popup calendar */
+.react-datepicker {
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: transparent!important;
+}
+.profile-card11 {
+    background: none !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* padding: 2rem; */
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+

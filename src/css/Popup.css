@@ -50,10 +50,7 @@
   color: #007bff;
 }
 
-.stat-value {
-  font-size: 18px;
-  font-weight: 500;
-}
+
 
 .stat-label {
   font-size: 14px;
@@ -181,8 +178,9 @@
 }
 
 .stat-value {
-  font-size: 1.5rem;
-  font-weight: bold;
+    color: #5083ea !important;
+    font-weight: 500;
+    font-size: 18px;
 }
 
 .stat-label {

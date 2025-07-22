@@ -405,7 +405,6 @@ body {
   display: block;
   width: 150px;
   height:32px;
-  padding: .375rem .75rem;
   font-size: 13px !important;
   font-weight: 400;
   line-height: 1.5;
@@ -416,6 +415,7 @@ body {
   border: var(--bs-border-width) solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  padding: .375rem 2.25rem .375rem .75rem !important;
 }
 
 
