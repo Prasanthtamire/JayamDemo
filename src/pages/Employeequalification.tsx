@@ -123,7 +123,7 @@ const EmployeeQualification: React.FC = () => {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">
       <div className="heading-with-line">
-        <h2 className="stat-value custom-font" style={{ marginBottom: 0 }}>
+        <h2 className="stat-value custom-font gasp-style" style={{ marginBottom: 0 }}>
           Employees Qualification
         </h2>
       </div>

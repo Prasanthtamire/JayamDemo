@@ -65,7 +65,7 @@ const EmployeeLeaves: React.FC = () => {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">
       <div className="heading-with-line">
-        <h2 className="stat-value custom-font">Employee Leaves</h2>
+        <h2 className="stat-value custom-font gasp-style">Employee Leaves</h2>
       </div>
 
       <div className="flex flex-wrap md:flex-nowrap items-center gap-4 w-full mb-4">

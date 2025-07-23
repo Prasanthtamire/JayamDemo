@@ -168,7 +168,7 @@ const Payroll: React.FC = () => {
         className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
       >
         <div className="heading-with-line">
-          <h2 style={{ marginBottom: "0px" }} className="stat-value">
+          <h2 style={{ marginBottom: "0px" }} className="stat-value gasp-style">
             Payroll Managmenet
           </h2>
         </div>
@@ -214,7 +214,7 @@ const Payroll: React.FC = () => {
         className="glass-card p-6"
       >
  <div className="heading-with-line">
-          <h2 style={{ marginBottom: "0px" }} className="stat-value">
+          <h2 style={{ marginBottom: "0px" }} className="stat-value gasp-style">
             Quick Actions
           </h2>
         </div>        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -75,50 +75,42 @@ const Addemployee: React.FC = () => {
       </div>
 
       {/* Autocomplete */}
-      <div className="mb-4 d-flex align-items-center gap-3">
-        <label className="custom-font">Employee Code:</label>
-      <div style={{ flex: 1,}}>
-  <Autocomplete
-    freeSolo
-    options={employeeOptions}
-    value={employeeCode}
-    onInputChange={(e, value) => handleEmployeeCodeChange(value)}
-    renderInput={(params) => (
-      <TextField
-        {...params}
-        variant="outlined"
-        size="small"
-        placeholder="Enter Code"
-        style={{ width: "164px" }} // ✅ Width applied to the input
-      />
-    )}
-    style={{ width: "164px" }} // ✅ Width applied to Autocomplete wrapper
-  />
-</div>
-
-      {employeeCode && (
-        <div className="d-flex align-items-center gap-3 mb-4">
-          <div className="position-relative">
-            <img
-              src={currentEmployee.avatar}
-              alt={currentEmployee.name}
-              className="rounded-circle"
-              style={{ width: 50, height: 50, objectFit: 'cover' }}
-            />
-            <span
-              className={`position-absolute bottom-0 end-0 border border-white rounded-circle ${
-                currentEmployee.status === 'active' ? 'bg-success' : 'bg-secondary'
-              }`}
-              style={{ width: 12, height: 12 }}
-            ></span>
-          </div>
-          <div>
-            <strong>{currentEmployee.name}</strong>
-            <div className="text-muted">{currentEmployee.position}</div>
-          </div>
-        </div>
-      )}
-       </div>
+        <div className="flex flex-wrap md:flex-nowrap items-center gap-4 w-full mb-4">
+             <label className="custom-font min-w-[120px]">Employee Code:</label>
+             <div className="flex-grow">
+               <Autocomplete
+                 freeSolo
+                 options={employeeOptions}
+                 className="custom-autocomplete"
+                 renderInput={(params) => (
+                   <TextField {...params} variant="outlined" size="small" className="custom-input w-full" placeholder="Enter Code" />
+                 )}
+                 onInputChange={(e, value) => handleEmployeeCodeChange(value)}
+                 value={employeeCode}
+               />
+             </div>
+     
+             {employeeCode && (
+               <div className="flex items-center space-x-3 mt-2 md:mt-0">
+                 <div className="relative">
+                   <img
+                     src={currentEmployee.avatar}
+                     alt={currentEmployee.name}
+                     className="w-12 h-12 rounded-full object-cover ring-2 ring-white shadow-md"
+                   />
+                   <div
+                     className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${
+                       currentEmployee.status === 'active' ? 'bg-green-500' : 'bg-gray-400'
+                     }`}
+                   />
+                 </div>
+                 <div className="text-left">
+                   <h3 className="font-semibold text-gray-900 text-sm">{currentEmployee.name}</h3>
+                   <p className="text-xs text-gray-600">{currentEmployee.position}</p>
+                 </div>
+               </div>
+             )}
+           </div>
 
       {/* Tabs */}
       <Card className="profile-card11">

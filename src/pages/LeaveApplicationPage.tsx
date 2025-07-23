@@ -110,7 +110,7 @@ const LeaveApplicationPage = () => {
     <div className="leave-page container">
       <div className="top-bar">
         <div className="heading-with-line">
-          <h2 className="stat-value" style={{ marginBottom: "0px" }}>
+          <h2 className="stat-value gasp-style" style={{ marginBottom: "0px" }}>
             Leave Statistics
           </h2>
         </div>

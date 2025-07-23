@@ -3,7 +3,7 @@
   max-width: 95%;
 }
 
-.modal-content {
+.modal-content1 {
   border-radius: 12px;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
@@ -132,7 +132,7 @@
   margin: 1.5rem auto;
 }
 
-.modal-content {
+.modal-content1 {
   border-radius: 12px;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
@@ -265,7 +265,7 @@
 
 /* Media Query for Small Screens */
 @media (max-width: 576px) {
-  .modal-content {
+  .modal-content1 {
     padding: 15px 10px;
   }
 
@@ -280,3 +280,8 @@
 
   
 }
+
+
+
+
+

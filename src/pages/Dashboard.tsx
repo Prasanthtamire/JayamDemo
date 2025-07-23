@@ -1,24 +1,15 @@
-import "../css/ProfilePage.css";
 import  { useState } from "react";
 import DatePicker from "react-datepicker";
 import { Calendar, ClipboardList, Mail, Phone, UserCheck, Droplets } from 'lucide-react';
-
-import {
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  ResponsiveContainer,
-  Tooltip,
-  Legend,
-  Area,
-  AreaChart,
-} from "recharts";
+import {XAxis,YAxis,CartesianGrid, ResponsiveContainer, Tooltip,Legend, Area, AreaChart,} from "recharts";
 import {  Clock, LogOut, UserX, CalendarDays } from "lucide-react";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datepicker/dist/react-datepicker.css";
 import '../css/Dashboard.css';
 import '../css/DashboardEmployee.css';
+import "../css/ProfilePage.css";
+
 const EmployeeDashboard = () => {
   const [showAttendanceModal, setShowAttendanceModal] = useState(false);
   const handleOpenAttendance = () => setShowAttendanceModal(true);
@@ -197,9 +188,10 @@ const EmployeeDashboard = () => {
         {/* Employee Profile Card */}
         <div className="profile-card">
           <div className="top-bar">
-          <div className="heading-with-line">
-            <h2 className="stat-value">Employee Details</h2>
-          </div>
+        <div className="heading-with-line">
+  <h2 className="stat-value gasp-style">Employee Details</h2>
+</div>
+
           <div className="top-bar-right flex">
             <button className="download-btn" onClick={handleOpenAttendance}>
               <CalendarDays size={18} className="me-1" /> Attendance
@@ -249,7 +241,7 @@ const EmployeeDashboard = () => {
         {/* Team Members */}
         <div className="team-section">
  <div className="heading-with-line">
-            <h2 className="stat-value">My Team</h2>
+            <h2 className="stat-value gasp-style">My Team</h2>
           </div>          <div className="team-scroll">
             {teamMembers.map((member) => (
               <div key={member.id} className="team-member-card">
@@ -282,7 +274,7 @@ const EmployeeDashboard = () => {
             </div>
             <div className="stat-details">
               <div className="stat-value">15</div>
-              <span className="stat-label">Total Attendance</span>
+              <span className="stat-label gasp-style">Total Attendance</span>
             </div>
           </div>
 
@@ -321,7 +313,7 @@ const EmployeeDashboard = () => {
       <div className="chart-section">
         <div className="chart-card">
    <div className="heading-with-line">
-            <h2 className="stat-value">Leave Statics Overview</h2>
+            <h2 className="stat-value ">Leave Statics Overview</h2>
           </div>          <ResponsiveContainer width="100%" height={350}>
             <AreaChart data={leaveData}>
               <defs>
@@ -392,17 +384,19 @@ const EmployeeDashboard = () => {
 
 
       {/* Modal with Attendance Details */}
-      <Modal
-        show={showAttendanceModal}
-        onHide={handleCloseAttendance}
-        size="xl"
-        centered
-      >
-        <Modal.Header closeButton>
-          <div className="heading-with-line" style={{ marginBottom: "0px" }}>
-            <h3 className="stat-value" >Attendance Overview</h3>
-          </div>{" "}
-        </Modal.Header>
+     <Modal
+  show={showAttendanceModal}
+  onHide={handleCloseAttendance}
+  size="xl"
+  centered
+  dialogClassName="custom-attendance-dialog"
+  contentClassName="custom-attendance-content"
+>
+  <Modal.Header closeButton>
+    <div className="heading-with-line" style={{ marginBottom: "0px" }}>
+      <h3 className="stat-value">Attendance Overview</h3>
+    </div>
+  </Modal.Header>
         <Modal.Body>
           <div className="employee-stats">
             <div className="stat-box stat-attendance">

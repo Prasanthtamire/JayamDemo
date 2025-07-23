@@ -57,7 +57,7 @@ const menuItems = [
     path: '/master',
     submenu: [
       { title: 'Band', path: '/band' },
-      { title: 'Department', path: '/department' },
+      // { title: 'Department', path: '/department' },
       { title: 'Designation', path: '/designation' },
       { title: 'Languages', path: '/languages' },
       { title: 'Leaves Code', path: '/leavescode' },

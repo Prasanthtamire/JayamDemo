@@ -244,7 +244,7 @@
 /* Desktop (up to 1280px) */
 @media (max-width: 1280px) {
   .dashboard-container {
-    padding: 1rem;
+    padding: 0px;
   }
 
   .top-section {
@@ -257,7 +257,7 @@
   }
 
   .team-scroll {
-    max-height: 350px;
+    max-height: 450px;
   }
 }
 

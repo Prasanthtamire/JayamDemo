@@ -193,7 +193,7 @@ const Leave: React.FC = () => {
         className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
       >
         <div className="heading-with-line">
-          <h2 style={{ marginBottom: "0px" }} className="stat-value">
+          <h2 style={{ marginBottom: "0px" }} className="stat-value gasp-style">
             Leave Managmenet
           </h2>
         </div>

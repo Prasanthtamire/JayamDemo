@@ -148,7 +148,7 @@ const Login: React.FC = () => {
               className="login-header"
             >
               <img src={jayam} alt="Logo" className="profile-image2" />
-              <p className="login-subtitle">Sign in to your HRMS account</p>
+              {/* <p className="login-subtitle">Sign in to your HRMS account</p> */}
             </motion.div>
 
             <motion.form

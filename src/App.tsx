@@ -32,7 +32,7 @@ import EmployeeLeaves from './pages/EmployeeLeaves';
 import Employeeexperience from './pages/EmployeeExperience';
 import Employeefamilydetails from './pages/EmployeeFamilydetails';
 import Employeeinsurance from './pages/EmployeeInsurancedetails';
-
+import ChatBotComponent from "./components/ChatBotComponent";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -80,76 +80,10 @@ function App() {
       </Routes>
       </AnimatePresence>
       </div>
+       <ChatBotComponent />
     </Router>
   );
 }
 
 export default App;
-
-// import React, { useState } from "react";
-// import FlashCard from "../src/pages/PopupModal";
-
-// const App = () => {
-//   const [flash, setFlash] = useState<{
-//     type: "success" | "error" | "warning";
-//     show: boolean;
-//   }>({
-//     type: "success",
-//     show: false,
-//   });
-
-//   const showFlash = (type: "success" | "error" | "warning") => {
-//     setFlash({ type, show: true });
-//   };
-
-//   const handleClose = () => {
-//     setFlash((prev) => ({ ...prev, show: false }));
-//   };
-
-//   return (
-//     <div style={{ padding: "60px", textAlign: "center" }}>
-//       <div style={{ marginBottom: "20px" }}>
-//         <button className="flash-action success" onClick={() => showFlash("success")}>
-//           Show Success
-//         </button>{" "}
-//         <button className="flash-action error" onClick={() => showFlash("error")}>
-//           Show Error
-//         </button>{" "}
-//         <button className="flash-action warning" onClick={() => showFlash("warning")}>
-//           Show Warning
-//         </button>
-//       </div>
-
-//       {flash.show && (
-//         <FlashCard
-//           type={flash.type}
-//           title={
-//             flash.type === "success"
-//               ? "Successful"
-//               : flash.type === "error"
-//               ? "Error"
-//               : "Warning"
-//           }
-//           message={
-//             flash.type === "success"
-//               ? "You have approved the claim."
-//               : flash.type === "error"
-//               ? "Something went wrong."
-//               : "Please check the form before submitting."
-//           }
-//           buttonText={
-//             flash.type === "success"
-//               ? "Done"
-//               : flash.type === "error"
-//               ? "Try Again"
-//               : "OK"
-//           }
-//           onClose={handleClose}
-//         />
-//       )}
-//     </div>
-//   );
-// };
-
-// export default App;
 

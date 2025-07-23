@@ -114,7 +114,7 @@ const Employees: React.FC = () => {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">
       {/* Header */}
       <div className="heading-with-line" >
-        <h2 className="stat-value" style={{ marginBottom: "0px" }}>Employees</h2>
+        <h2 className="stat-value gasp-style" style={{ marginBottom: "0px" }}>Employees</h2>
       </div>
 
       {/* Filters */}

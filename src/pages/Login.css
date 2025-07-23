@@ -203,7 +203,7 @@
   max-width: 450px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border-radius: 24px;
+  border-radius: 9px;
   padding: 3rem;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -441,7 +441,7 @@
   .login-content {
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .login-features {
@@ -451,7 +451,7 @@
 
   .login-form-section {
     order: 1;
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .features-content {

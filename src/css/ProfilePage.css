@@ -128,6 +128,20 @@
   border-left: 4px solid #3b82f6; /* Customize color */
   margin-bottom: 1rem;
 }
+.gasp-style {
+  opacity: 0;
+  letter-spacing: 10px;
+  animation: gaspLetter 1s ease-out forwards;
+}
+
+@keyframes gaspLetter {
+  to {
+    opacity: 1;
+    letter-spacing: normal;
+  }
+}
+
+
 .modal-header{
   background-color: #adc4e7 !important;
 }
