@@ -35,7 +35,11 @@ import Employeeinsurance from './pages/EmployeeInsurancedetails';
 import ChatBotComponent from "./components/ChatBotComponent";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+import Policies from "./pages/policies";
+import Holidays from "./pages/Holidays";
+import Holidayupload from "./pages/Holidayupload";
+import leavestat from "./pages/Leavestat";
+import LeaveStat from './pages/Leavestat';
 
 function App() {
   return (
@@ -76,6 +80,13 @@ function App() {
             <Route path="/organizationchart" element={ <Layout> <OrganizationChart /> </Layout>   } />
             <Route path="/EmployeeQualification" element={ <Layout> <EmployeeQualification /> </Layout>   } />
             <Route path="/EmployeeNominee" element={ <Layout> <EmployeeNominee /> </Layout>   } />
+
+
+            <Route path="/Setup_policies" element={ <Layout> <Policies /> </Layout>   } />
+            <Route path="/setup_Holidays" element={ <Layout> <Holidays /> </Layout>   } />
+                        <Route path="/setup_Holidayupload" element={ <Layout> <Holidayupload /> </Layout>   } />
+
+                        <Route path="/Leavestst" element={ <Layout> <LeaveStat /> </Layout>   } />
 
       </Routes>
       </AnimatePresence>

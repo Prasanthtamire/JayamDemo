@@ -1,0 +1,45 @@
+.quick-actions-container {
+  padding: 2rem;
+  background: #f9f9f9;
+  min-height: auto;
+}
+
+.heading-with-line {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+.quick-card {
+  padding: 1.5rem 1rem;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.quick-card:hover {
+  transform: rotateY(6deg);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.icon-wrapper {
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}

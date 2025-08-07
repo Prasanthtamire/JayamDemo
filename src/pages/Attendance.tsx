@@ -203,7 +203,7 @@ const Attendance: React.FC = () => {
       </div>
 
       {/* Filters and Search */}
-      <motion.div
+      {/* <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3 }}
@@ -234,7 +234,7 @@ const Attendance: React.FC = () => {
             </select>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Attendance Table */}
       <motion.div
@@ -243,7 +243,7 @@ const Attendance: React.FC = () => {
         transition={{ delay: 0.4 }}
         className="glass-card overflow-hidden"
       >
-        <div className="px-6 py-4 border-b border-gray-200">
+        <div className="px-2 py-2 border-b border-gray-200">
           <h2 className="text-lg font-semibold text-gray-900 heading-with-line">
             Daily Attendance - {new Date(selectedDate).toLocaleDateString()}
           </h2>

@@ -10,7 +10,9 @@ import {
 import StatsCard from "../components/StatsCard";
 import { motion } from 'framer-motion';
 import "../css/Employeequalification.css";
-const LeaveApplicationPage = () => {
+import GraphChart  from "../components/Graphchart";
+
+const LeaveStat = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -110,14 +112,10 @@ const LeaveApplicationPage = () => {
       <div className="top-bar">
         <div className="heading-with-line">
           <h2 className="stat-value gasp-style" style={{ marginBottom: "0px" }}>
-            Leave Statistics
+            Leave Analysis of Prasanth Tamire
           </h2>
         </div>
-        <div className="top-bar-right flex">
-          <button className="download-btn" onClick={() => setIsModalOpen(true)}>
-            <CalendarPlus size={18} className="me-1" /> Apply Leave
-          </button>
-        </div>
+       
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
@@ -125,7 +123,7 @@ const LeaveApplicationPage = () => {
           <StatsCard key={stat.title} {...stat} delay={index * 0.1} />
         ))}
       </div>
-
+<GraphChart />
       {isModalOpen && (
         <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -228,7 +226,7 @@ const LeaveApplicationPage = () => {
         </div>
       )}
 
-      <div className="heading-with-line">
+      <div className="heading-with-line mt-3" >
         <h2 className="stat-value">Applied Leaves</h2>
       </div>
    <motion.div
@@ -281,4 +279,4 @@ const LeaveApplicationPage = () => {
   );
 };
 
-export default LeaveApplicationPage;
+export default LeaveStat;

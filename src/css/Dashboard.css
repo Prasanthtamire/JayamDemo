@@ -705,3 +705,53 @@ img, svg {
   transform: scale(1.2);
   color: #2968af;
 }
+
+
+
+/* Leave Modal specific scroll styling */
+.custom-leave-dialog {
+  max-width: 90vw;
+  width: 100%;
+}
+
+.custom-leave-content {
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+.leave-stat-container {
+  padding: 10px;
+}
+
+/* Make modal scrollable on smaller screens */
+@media (max-width: 768px) {
+  .custom-leave-content {
+    max-height: 80vh;
+    padding: 16px;
+  }
+}
+
+
+/* Backdrop blur and dark overlay */
+.modal-backdrop {
+ 
+  background-color:transparent; /* semi-dark overlay */
+  backdrop-filter: blur(1px);
+  z-index: 999; /* below modal */
+  opacity: 0;
+  /* animation: fadeIn 0.3s ease forwards; */
+}
+
+/* Modal container */
+.modal-content {
+ 
+  transform: translate(-50%, -50%) scale(0.95);
+  background-color: white;
+ 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+}
+

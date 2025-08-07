@@ -154,7 +154,7 @@
   background: #f1f5f9;
   padding: 1rem;
   border-radius: 10px;
-  width: 220px;
+  width: 100% !important; 
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
@@ -164,7 +164,7 @@
   justify-content: center;
   background: #e0e7ff;
   padding: 0.5rem;
-  border-radius: 50%;
+  border-radius: 8px;
   color: #4338ca;
 }
 
@@ -181,7 +181,7 @@
 }
 
 /* Optional: Individual stat styling (if needed) */
-.stat-attendance .stat-icon {
+/* .stat-attendance .stat-icon {
   background: #e6f4ea;
   color: #047857;
 }
@@ -196,8 +196,27 @@
 .stat-absent .stat-icon {
   background: #fee2e2;
   color: #dc2626;
+} */
+
+.stat-attendance .stat-icon {
+  background: linear-gradient(135deg, #34d399, #10b981); /* Green gradient */
+  color: white;
 }
 
+.stat-checkin .stat-icon {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6); /* Blue gradient */
+  color: white;
+}
+
+.stat-checkout .stat-icon {
+  background: linear-gradient(135deg, #facc15, #fbbf24); /* Yellow gradient */
+  color: white;
+}
+
+.stat-absent .stat-icon {
+  background: linear-gradient(135deg, #f87171, #ef4444); /* Red gradient */
+  color: white;
+}
 
 /* Responsive styles */
 @media (max-width: 768px) {

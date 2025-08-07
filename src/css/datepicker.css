@@ -14,7 +14,7 @@
 /* On focus */
 .custom-datepicker11 input:focus {
   border-color: #0d6efd;
-  background-color: #fff;
+  background-color: #fff !important;
   outline: none;
   box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
@@ -86,4 +86,17 @@
 .react-datepicker__day--today {
   font-weight: bold;
   border: 1px solid #0d6efd;
+}
+.react-datepicker {
+    font-family: inherit;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: white !important;
+}
+ .react-datepicker-year-header {
+    margin-top: 0;
+    color: #6b71d5;
+    font-weight: bold;
+    font-size: 14px;
 }

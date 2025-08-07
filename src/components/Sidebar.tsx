@@ -39,15 +39,23 @@ const menuItems = [
     path: '/employees',
     submenu: [
       { title: 'All Employees', path: '/employees' },
-      // { title: 'Organization Chart', path: '/organizationchart' }, 
-       { title: 'Employee Qualification ', path: '/EmployeeQualification' }, 
-     { title: 'Employee Nominee ', path: '/EmployeeNominee' }, 
-     { title: 'Employee Experience ', path: '/Employee_experience' }, 
-     { title: 'Employee family Details ', path: '/Employee_family_Details' }, 
-          { title: 'Employee insurance Details ', path: '/Employee_insurance_details' }, 
+       
 
 
 
+
+    ],
+  },
+
+   {
+    title: 'Setup',
+    icon: Clock,
+    path: '/setup',
+    submenu: [
+      { title: 'Policies', path: '/Setup_policies' },
+      { title: 'Holidays', path: '/Setup_Holidays' },
+      { title: 'Organization Chart', path: '/organizationchart' }, 
+      { title: 'Holidays Upload', path: '/setup_Holidayupload' },
 
     ],
   },
@@ -66,6 +74,21 @@ const menuItems = [
 
     ],
   },
+
+  {
+    title: 'Employee',
+    icon: User,
+    path: '/Employee',
+    submenu: [
+    { title: 'Employee Qualification ', path: '/EmployeeQualification' }, 
+     { title: 'Employee Nominee ', path: '/EmployeeNominee' }, 
+     { title: 'Employee Experience ', path: '/Employee_experience' }, 
+     { title: 'Employee family Details ', path: '/Employee_family_Details' }, 
+          { title: 'Employee insurance Details ', path: '/Employee_insurance_details' }, 
+    
+    ],
+  },
+
   {
     title: 'Attendance',
     icon: Clock,
