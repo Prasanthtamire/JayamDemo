@@ -66,7 +66,7 @@ const LeaveBarChart = () => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="chart-card">
+      <div className="chart-cardsgraph">
         <div className="heading-with-line">
           <h2 className="stat-value">Leave Statistics</h2>
         </div>

@@ -56,14 +56,16 @@ const QuickActions = () => {
       </div>
       <div className="quick-actions-grid">
         {quickActions.map((action, index) => (
-          <div
-            key={index}
-            className="quick-card"
-            style={{ backgroundColor: action.color }}
-            onClick={() => alert(`${action.title} clicked`)}
-          >
-            <div className="icon-wrapper">{action.icon}</div>
-            <p className="card-label">{action.title}</p>
+          <div key={index} className="flip-card" onClick={() => alert(`${action.title} clicked`)}>
+            <div className="flip-card-inner">
+              <div className="flip-card-front" style={{ backgroundColor: action.color }}>
+                <div className="icon-wrapper">{action.icon}</div>
+                <p className="card-label">{action.title}</p>
+              </div>
+              <div className="flip-card-back">
+                <p className="back-text ">Click to  {action.title}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
