@@ -91,11 +91,11 @@ const Holidayupload: React.FC = () => {
       </div>
 
       {/* File Upload */}
-      <div style={{ padding: '20px' }}>
+      <div >
         <input
           type="file"
           onChange={handleFileChange}
-          style={{ marginBottom: '10px' }}
+          
         />
         <br />
         {/* <Button variant="contained" color="primary" onClick={handleUpload}>

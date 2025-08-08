@@ -24,7 +24,6 @@ import LeavesCode from './Masters/LeavesCode';
 import Employeerelatives from './Masters/Employeesrelatives';
 import LeaveApplication from './pages/LeaveApplicationPage';
 import Paycreation from './pages/Paycategorycreation';
-import OrganizationChart from './pages/OrganizationChart';
 import EmployeeQualification from './pages/Employeequalification';
 import EmployeeNominee from './pages/Employeenomineedetails';
 import EmployeeLeaves from './pages/EmployeeLeaves';
@@ -37,6 +36,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Policies from "./pages/policies";
 import Holidays from "./pages/Holidays";
 import Holidayupload from "./pages/Holidayupload";
+import OrganizationChart from './pages/OrganizationChart';
+
+
+// Employee
+import Employeesalary from './Employee/Employeesalary'; 
+import Employeebiometric from './Employee/Employeebiometric'; 
+
+
 // import leavestat from "./pages/Leavestat";
 import LeaveStat from './pages/Leavestat';
 import ScrollToTop from './pages/ScrollToTop';
@@ -84,9 +91,14 @@ function App() {
 
             <Route path="/Setup_policies" element={ <Layout> <Policies /> </Layout>   } />
             <Route path="/setup_Holidays" element={ <Layout> <Holidays /> </Layout>   } />
-                        <Route path="/setup_Holidayupload" element={ <Layout> <Holidayupload /> </Layout>   } />
+             <Route path="/setup_Holidayupload" element={ <Layout> <Holidayupload /> </Layout>   } />
+              <Route path="/Leavestst" element={ <Layout> <LeaveStat /> </Layout>   } />
 
-                        <Route path="/Leavestst" element={ <Layout> <LeaveStat /> </Layout>   } />
+              {/* Employee */}
+              <Route path="/Employeesalary" element={ <Layout> <Employeesalary /> </Layout>   } />
+              <Route path="/Employee_Biometric" element={ <Layout> <Employeebiometric /> </Layout>   } />
+
+
 
       </Routes>
       </AnimatePresence>

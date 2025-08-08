@@ -2,7 +2,7 @@
   font-size: 14px;
   font-weight: bold;
   color: #004d40;
-      font-family: 'Poppins', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 
 }
 .form-label {
@@ -277,4 +277,8 @@ th {
   .pagination-box {
     padding: 10px;
   }
+}
+.css-rizt0-MuiTypography-root {
+    margin: 0;
+    font-family: 'Poppins', sans-serif !important;
 }
