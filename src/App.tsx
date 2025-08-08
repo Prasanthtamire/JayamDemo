@@ -9,7 +9,6 @@ import Leave from './pages/Leave';
 import Payroll from './pages/Payroll';
 import Performance from './pages/Performance';
 import Reports from './pages/Reports';
-import ScrollTop from './pages/ScrollTop';
 import Profile from './pages/Profile';
 import Addemployee from './pages/AddEmployee';
 import { Calendar } from 'lucide-react';
@@ -38,13 +37,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Policies from "./pages/policies";
 import Holidays from "./pages/Holidays";
 import Holidayupload from "./pages/Holidayupload";
-import leavestat from "./pages/Leavestat";
+// import leavestat from "./pages/Leavestat";
 import LeaveStat from './pages/Leavestat';
-
+import ScrollToTop from './pages/ScrollToTop';
 function App() {
   return (
     <Router>
-      <ScrollTop />
+      <ScrollToTop/>
+       <AnimatePresence mode="wait"></AnimatePresence>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 font-poppins">
       <AnimatePresence mode="wait">
       <Routes>
