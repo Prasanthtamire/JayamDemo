@@ -125,12 +125,13 @@ const Band = () => {
       <Accordion
         expanded={expanded}
         onChange={handleAccordionChange}
-        style={{ marginTop: "20px" }}
+        style={{ marginTop: "20px"}}
       >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{ color: "#004d40" }} />}
         >
-          <Typography className="Mainheading">Week Offs</Typography>
+          <Typography className="Mainheading"   
+ >Week Offs</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div className="table-responsive">

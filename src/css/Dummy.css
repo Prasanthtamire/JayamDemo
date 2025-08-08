@@ -282,3 +282,6 @@ th {
     margin: 0;
     font-family: 'Poppins', sans-serif !important;
 }
+.css-1f1pi2l-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+    min-height: 33px !important;
+}
