@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Dummy.css";
-import Grid from "@mui/material/Grid";
 import { Pencil, Trash2 } from "lucide-react";
 import Button from "@mui/material/Button";
 import {
@@ -112,7 +111,7 @@ const Band = () => {
                     id="compensatoryOff"
                     className="form-check-input"
                   />
-                  <label htmlFor="compensatoryOff" className="form-check-label">
+                  <label htmlFor="compensatoryOff" className="form-check-label form-label">
                     Compensatory Off <span className="text-danger">*</span>
                   </label>
                 </div>
@@ -210,23 +209,11 @@ const Band = () => {
       </Accordion>
 
       {/* Action Buttons */}
-      <Grid container spacing={1} className="button-container mt-3">
-        <Grid item xs={12} sm={3} md={1} lg={1}>
-          <Button variant="contained" className="save-button">
-            Save
-          </Button>
-        </Grid>
-        <Grid item xs={12} sm={3} md={1} lg={1}>
-          <Button variant="contained" className="view-button">
-            View
-          </Button>
-        </Grid>
-        <Grid item xs={12} sm={3} md={1} lg={1}>
-          <Button variant="contained" className="clear-button">
-            Clear
-          </Button>
-        </Grid>
-      </Grid>
+        <div className="mt-4 d-flex gap-3">
+        <Button variant="contained" className="save-button" >Save</Button>
+        <Button variant="contained" className="view-button" >View</Button>
+        <Button variant="contained" className="clear-button" >Clear</Button>
+      </div>
     </div>
   );
 };

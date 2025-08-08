@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Dummy.css";
-import Grid from "@mui/material/Grid";
 import { Pencil, Trash2 } from "lucide-react"; // <-- Add this import at the top
 
 import Button from "@mui/material/Button";
@@ -356,23 +355,11 @@ const LeavesCode = () => {
       </form>
 
       {/* Action Buttons */}
-      <Grid container spacing={1} className="button-container mt-3">
-        <Grid item xs={12} sm={3} md={1} lg={1}>
-          <Button variant="contained" className="save-button">
-            Save
-          </Button>
-        </Grid>
-        <Grid item xs={12} sm={3} md={1} lg={1}>
-          <Button variant="contained" className="view-button">
-            View
-          </Button>
-        </Grid>
-        <Grid item xs={12} sm={3} md={1} lg={1}>
-          <Button variant="contained" className="clear-button">
-            Clear
-          </Button>
-        </Grid>
-      </Grid>
+       <div className="mt-4 d-flex gap-3">
+        <Button variant="contained" className="save-button" >Save</Button>
+        <Button variant="contained" className="view-button" >View</Button>
+        <Button variant="contained" className="clear-button" >Clear</Button>
+      </div>
 
       {/* Table with Pagination */}
       <Accordion
