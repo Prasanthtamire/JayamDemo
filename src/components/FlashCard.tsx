@@ -14,7 +14,7 @@ type Props = {
   message: string;
   buttonText: string;
   onClose: () => void;
-  onCancel?: () => void; // Used only for warning
+  onCancel?: () => void; 
 };
 
 const FlashCard: React.FC<Props> = ({

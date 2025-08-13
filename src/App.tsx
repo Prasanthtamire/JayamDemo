@@ -42,11 +42,14 @@ import OrganizationChart from './pages/OrganizationChart';
 // Employee
 import Employeesalary from './Employee/Employeesalary'; 
 import Employeebiometric from './Employee/Employeebiometric'; 
-
+import Employee360 from './Employee/Employee_360';
 
 // import leavestat from "./pages/Leavestat";
 import LeaveStat from './pages/Leavestat';
 import ScrollToTop from './pages/ScrollToTop';
+
+import Admindashbaord from './pages/Admindashbaord';
+import Payrolldashbaord from './pages/Payrolldashbaord/Payrolldashbaorddetails';
 function App() {
   return (
     <Router>
@@ -58,6 +61,8 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Layout> <Dashboard /> </Layout> } />
+            <Route path="/admindashbaord" element={<Layout> <Admindashbaord /> </Layout> } />
+
             <Route path="/employees" element={<Layout> <Employees /></Layout> } />
             <Route path="/company-policy" element={ <Layout><CompanyPolicy /></Layout>} />
             <Route path="/attendance" element={<Layout><Attendance /></Layout>} />
@@ -98,7 +103,9 @@ function App() {
               <Route path="/Employeesalary" element={ <Layout> <Employeesalary /> </Layout>   } />
               <Route path="/Employee_Biometric" element={ <Layout> <Employeebiometric /> </Layout>   } />
 
+              <Route path="/Employee_details_360" element={ <Layout> < Employee360/> </Layout>   } />
 
+              <Route path="/Payrolldashbaord" element={ <Layout> < Payrolldashbaord/> </Layout>   } />
 
       </Routes>
       </AnimatePresence>

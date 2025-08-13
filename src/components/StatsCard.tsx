@@ -96,13 +96,21 @@ const StatsCard: React.FC<StatsCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.5 }}
       whileHover={{ y: -5, scale: 1.02 }}
-      className="glass-card p-6 rounded-xl relative  hover:shadow-2xl transition-all duration-300"
+style={{
+    backgroundColor: "white",
+    padding: "1.5rem",
+    borderRadius: "0.75rem",
+    position: "relative",
+    transition: "all 0.3s",
+    boxShadow: "none",
+  }}
+  className="glass-card hover:shadow-2xl"
     >
       <div className="flex items-center justify-between">
         <div className="flex-1">
           <p className="text-sm font-medium text-gray-600 mb-1">{title}</p>
 
-          <p className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+          <p className="text-xl md:text-xl font-bold text-gray-900 mb-1">
             {used !== undefined ? (
               <>
                 {used}/{value} <span className="text-sm font-medium text-gray-500">Used</span>

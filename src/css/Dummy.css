@@ -1,4 +1,4 @@
-.mainheading {
+.mainheading1 {
   font-size: 14px;
   font-weight: bold;
   color: #004d40;
@@ -36,37 +36,6 @@
   margin: 10px !important;
 }
 
-.save-button {
-  background-color: #359392 !important;
-  color: black !important;
-  margin-right: 10px !important;
-  text-transform: none !important;
-  font-family: 'Poppins', sans-serif !important;
-  height: 30px !important;
-  width: 50px !important;
-}
-
-.view-button {
-  background: rgb(144, 223, 222) !important;
-  color: black !important;
-  text-transform: none !important;
-  font-family: 'Poppins', sans-serif !important;
-    height: 30px !important;
-      width: 50px !important;
-
-}
-
-.clear-button {
-  background-color: #c1dedc !important;
-  color: black !important;
-  margin-left: 10px !important;
-  text-transform: none !important;
-  font-family: 'Poppins', sans-serif !important;
-    height: 30px !important;
-      width: 50px !important;
-
-
-}
 .table-dark {
     --bs-table-color: #000000 !important;
     --bs-table-bg: #c9d8e6 !important;
@@ -172,33 +141,35 @@ th {
 .MuiAccordionSummary-root {
     background-color: rgb(221 230 230) !important;
             color: white; 
-            height: 39px !important;    
   }                    
-  .css-1f1pi2l-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
-  min-height: 33px !important;
-}
+ 
 .css-1umw9bq-MuiSvgIcon-root {
   
   width: 20px !important;
   height: 20px !important;
 }
-.css-dogt0a-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
-  min-height: 39px !important;
-}
-.css-1cb0or7-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
-    height: 1px;
-}
-.css-1cb0or7-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
-  min-height: 36px !important;
-  background-color: #e0ebea !important;
-}
-.css-f855n7-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
-  height: 0px  !important;
+
+.expandIconWrapper {
+  background-color: rgb(221, 230, 230) !important;
+  border-radius: 4px;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.css-1sp6ne1-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+.accordionSummaryRoot {
   min-height: 39px !important;
+  height: 39px !important;
 }
+
+.accordionSummaryRoot.Mui-expanded {
+  min-height: 39px !important;
+  height: 39px !important;
+}
+
+
+
 .css-rizt0-MuiTypography-root {
   margin: 0;
   /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
@@ -282,6 +253,26 @@ th {
     margin: 0;
     font-family: 'Poppins', sans-serif !important;
 }
-.css-1f1pi2l-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
-    min-height: 33px !important;
+
+
+
+.accordion-summary {
+  min-height: 39px !important;
+  height: 39px !important;
+  display: flex;
+  align-items: center;
+}
+
+.accordion-summary.Mui-expanded {
+  min-height: 39px !important;
+  height: 39px !important;
+}
+
+.expand-icon-wrapper {
+  background-color: rgb(221, 230, 230) !important;
+  padding: 4px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import StatsCard from '../components/StatsCard';
 
-const Payroll: React.FC = () => {
+const Payrollstatcard: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('2024-12');
 
@@ -293,7 +293,7 @@ const Payroll: React.FC = () => {
       </motion.div>
 
       {/* Payroll Table */}
-      <motion.div
+      {/* <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.6 }}
@@ -383,12 +383,13 @@ const Payroll: React.FC = () => {
             </tbody>
           </table>
         </div>
-      </motion.div>
+        
+      </motion.div> */}
     </motion.div>
   );
 };
 
-export default Payroll;
+export default Payrollstatcard;
 
 
 

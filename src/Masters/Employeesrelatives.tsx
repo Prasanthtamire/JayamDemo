@@ -104,17 +104,26 @@ const Employeerelatives = () => {
 
   return (
     <div className="container mt-3">
+       <div className="heading-with-line">
+        <h2 className="stat-value gasp-style">Employee Relatives</h2>
+      </div>
       {/* Form Section */}
       <form>
         <Accordion
           expanded={employeeFormExpanded}
           onChange={() => setEmployeeFormExpanded(!employeeFormExpanded)}
         >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "#004d40" }} />}
-          >
-            <Typography className="Mainheading">Employee relatives</Typography>
-          </AccordionSummary>
+ <AccordionSummary
+          expandIcon={
+            <span className="expand-icon-wrapper">
+              <ExpandMoreIcon />
+            </span>
+          }
+          className="accordion-summary"
+        >
+          <Typography className="Mainheading">Employee Relativces</Typography>
+        </AccordionSummary>
+
           <AccordionDetails>
             <div className="row mb-2">
               <div className="col-md-4 col-sm-6 mb-2">
@@ -168,11 +177,17 @@ const Employeerelatives = () => {
         onChange={handleAccordionChange}
         style={{ marginTop: "20px" }}
       >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "#004d40" }} />}
+       <AccordionSummary
+          expandIcon={
+            <span className="expand-icon-wrapper">
+              <ExpandMoreIcon />
+            </span>
+          }
+          className="accordion-summary"
         >
-          <Typography className="Mainheading">Employee relatives Details </Typography>
+          <Typography className="Mainheading">Employee Relative Details</Typography>
         </AccordionSummary>
+
 
         <AccordionDetails>
           <div className="table-responsive">

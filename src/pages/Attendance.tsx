@@ -2,20 +2,27 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Clock,
-  Calendar,
-  Users,
   CheckCircle2,
   XCircle,
   AlertCircle,
   Download,
-  Filter,
   Search,
+  Filter,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import StatsCard from '../components/StatsCard';
 
+type Status = 'all' | 'present' | 'absent' | 'late';
+
 const Attendance: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
+  const [selectedDate, setSelectedDate] = useState(
+    new Date().toISOString().split('T')[0]
+  );
   const [searchTerm, setSearchTerm] = useState('');
+  const [statusFilter, setStatusFilter] = useState<Status>('all');
+  const [rowsPerPage, setRowsPerPage] = useState<number>(10);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const attendanceStats = [
     {
@@ -56,7 +63,8 @@ const Attendance: React.FC = () => {
     {
       id: 1,
       name: 'Sarah Johnson',
-      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400',
+      avatar:
+        'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400',
       department: 'Engineering',
       checkIn: '09:00 AM',
       checkOut: '06:15 PM',
@@ -67,7 +75,8 @@ const Attendance: React.FC = () => {
     {
       id: 2,
       name: 'Michael Chen',
-      avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400',
+      avatar:
+        'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400',
       department: 'Product',
       checkIn: '08:45 AM',
       checkOut: '05:30 PM',
@@ -78,7 +87,8 @@ const Attendance: React.FC = () => {
     {
       id: 3,
       name: 'Emily Rodriguez',
-      avatar: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400',
+      avatar:
+        'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400',
       department: 'Design',
       checkIn: '09:15 AM',
       checkOut: '06:00 PM',
@@ -89,7 +99,8 @@ const Attendance: React.FC = () => {
     {
       id: 4,
       name: 'David Kumar',
-      avatar: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400',
+      avatar:
+        'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400',
       department: 'Engineering',
       checkIn: '-',
       checkOut: '-',
@@ -100,7 +111,8 @@ const Attendance: React.FC = () => {
     {
       id: 5,
       name: 'Lisa Wang',
-      avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
+      avatar:
+        'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
       department: 'Marketing',
       checkIn: '08:30 AM',
       checkOut: '05:45 PM',
@@ -111,7 +123,8 @@ const Attendance: React.FC = () => {
     {
       id: 6,
       name: 'James Wilson',
-      avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400',
+      avatar:
+        'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400',
       department: 'Sales',
       checkIn: '09:30 AM',
       checkOut: 'Working',
@@ -147,10 +160,36 @@ const Attendance: React.FC = () => {
     }
   };
 
-  const filteredAttendance = attendanceData.filter(employee =>
-    employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    employee.department.toLowerCase().includes(searchTerm.toLowerCase())
+  // ---- FILTERING ----
+  const filteredAttendance = attendanceData.filter((employee) => {
+    const matchesSearch =
+      employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      employee.department.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchesStatus =
+      statusFilter === 'all' ? true : employee.status === statusFilter;
+
+    return matchesSearch && matchesStatus;
+  });
+
+  // Reset to page 1 whenever filters/search change
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, statusFilter, rowsPerPage, selectedDate]);
+
+  // ---- PAGINATION ----
+  const totalRows = filteredAttendance.length;
+  const totalPages = Math.max(1, Math.ceil(totalRows / rowsPerPage));
+  const startIndex = (currentPage - 1) * rowsPerPage;
+  const currentRows = filteredAttendance.slice(
+    startIndex,
+    startIndex + rowsPerPage
   );
+
+  const goToPage = (p: number) => {
+    if (p < 1 || p > totalPages) return;
+    setCurrentPage(p);
+  };
 
   return (
     <motion.div
@@ -166,12 +205,12 @@ const Attendance: React.FC = () => {
         transition={{ delay: 0.1 }}
         className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
       >
-         <div className="heading-with-line">
-          <h2 style={{ marginBottom: "0px" }} className="stat-value">
+        <div className="heading-with-line">
+          <h2 style={{ marginBottom: '0px' }} className="stat-value">
             Attendance
           </h2>
         </div>
-        
+
         <div className="flex items-center space-x-3">
           <input
             type="date"
@@ -179,7 +218,7 @@ const Attendance: React.FC = () => {
             onChange={(e) => setSelectedDate(e.target.value)}
             className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
-          
+
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -194,16 +233,12 @@ const Attendance: React.FC = () => {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {attendanceStats.map((stat, index) => (
-          <StatsCard
-            key={stat.title}
-            {...stat}
-            delay={index * 0.1}
-          />
+          <StatsCard key={stat.title} {...stat} delay={index * 0.1} />
         ))}
       </div>
 
       {/* Filters and Search */}
-      {/* <motion.div
+      <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3 }}
@@ -211,7 +246,7 @@ const Attendance: React.FC = () => {
       >
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
               placeholder="Search employees..."
@@ -221,20 +256,37 @@ const Attendance: React.FC = () => {
             />
           </div>
 
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <Filter className="w-4 h-4 text-gray-500" />
               <span className="text-sm font-medium text-gray-700">Status:</span>
             </div>
-            <select className="px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50">
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value as Status)}
+              className="px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50"
+            >
               <option value="all">All Status</option>
               <option value="present">Present</option>
               <option value="absent">Absent</option>
               <option value="late">Late</option>
             </select>
+
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-gray-700">Rows:</span>
+              <select
+                value={rowsPerPage}
+                onChange={(e) => setRowsPerPage(Number(e.target.value))}
+                className="px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50"
+              >
+                <option value={5}>5</option>
+                <option value={10}>10</option>
+                <option value={20}>20</option>
+              </select>
+            </div>
           </div>
         </div>
-      </motion.div> */}
+      </motion.div>
 
       {/* Attendance Table */}
       <motion.div
@@ -274,12 +326,12 @@ const Attendance: React.FC = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {filteredAttendance.map((employee, index) => (
+              {currentRows.map((employee, index) => (
                 <motion.tr
                   key={employee.id}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + index * 0.05 }}
+                  transition={{ delay: 0.2 + index * 0.03 }}
                   className="hover:bg-white/50 transition-colors"
                 >
                   <td className="px-6 py-4 whitespace-nowrap">
@@ -302,7 +354,11 @@ const Attendance: React.FC = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
                       {getStatusIcon(employee.status)}
-                      <span className={`ml-2 px-2 py-1 text-xs font-medium rounded-full capitalize ${getStatusColor(employee.status)}`}>
+                      <span
+                        className={`ml-2 px-2 py-1 text-xs font-medium rounded-full capitalize ${getStatusColor(
+                          employee.status
+                        )}`}
+                      >
                         {employee.status}
                       </span>
                     </div>
@@ -317,15 +373,13 @@ const Attendance: React.FC = () => {
                     {employee.workHours}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    {employee.overtime !== '0h' && employee.overtime !== '-' && (
-                      <span className="text-orange-600 font-medium">
-                        {employee.overtime}
-                      </span>
-                    )}
-                    {employee.overtime === '0h' && (
-                      <span className="text-gray-500">-</span>
-                    )}
-                    {employee.overtime === '-' && (
+                    {employee.overtime !== '0h' &&
+                      employee.overtime !== '-' && (
+                        <span className="text-orange-600 font-medium">
+                          {employee.overtime}
+                        </span>
+                      )}
+                    {(employee.overtime === '0h' || employee.overtime === '-') && (
                       <span className="text-gray-500">-</span>
                     )}
                   </td>
@@ -333,6 +387,52 @@ const Attendance: React.FC = () => {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Pagination footer */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-4 py-3 border-t border-gray-200">
+          <div className="text-sm text-gray-600">
+            {totalRows === 0
+              ? 'No results'
+              : `${startIndex + 1}-${Math.min(
+                  startIndex + rowsPerPage,
+                  totalRows
+                )} of ${totalRows}`}
+          </div>
+
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => goToPage(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="px-2 py-1 rounded-lg border border-gray-300 disabled:opacity-50"
+              aria-label="Previous page"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+              <button
+                key={p}
+                onClick={() => goToPage(p)}
+                className={`px-3 py-1 rounded-lg border ${
+                  p === currentPage
+                    ? 'border-primary-500 bg-primary-50 text-primary-700'
+                    : 'border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                {p}
+              </button>
+            ))}
+
+            <button
+              onClick={() => goToPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="px-2 py-1 rounded-lg border border-gray-300 disabled:opacity-50"
+              aria-label="Next page"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </motion.div>
     </motion.div>

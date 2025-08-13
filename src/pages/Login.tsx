@@ -47,7 +47,7 @@ const Login: React.FC = () => {
         formData.employeeId === staticCredentials.employeeId &&
         formData.password === staticCredentials.password
       ) {
-        navigate("/dashboard");
+        navigate("/admindashbaord");
       } else {
         alert("Invalid credentials! Use JYM2025001");
       }

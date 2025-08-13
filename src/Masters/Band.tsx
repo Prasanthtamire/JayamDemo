@@ -1,23 +1,193 @@
+
+
+// import { useState } from "react";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "../css/Dummy.css";
+// import { Pencil, Trash2 } from "lucide-react";
+// import Button from "@mui/material/Button";
+// import {
+//   Accordion,
+//   AccordionSummary,
+//   AccordionDetails,
+//   Typography,
+//   TablePagination,
+// } from "@mui/material";
+// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
+// const Band: React.FC = () => {
+//   const [expanded, setExpanded] = useState(true);
+//   const [employeeFormExpanded, setEmployeeFormExpanded] = useState(true);
+
+//   const handleAccordionChange = () => setExpanded(!expanded);
+
+//   const employeeData = [
+//     { code: "E001", name: "Monday", fullDay: "", offDay: "" },
+//     { code: "E002", name: "Tuesday", fullDay: "", offDay: "" },
+//     { code: "E003", name: "Wednesday", fullDay: "", offDay: "" },
+//     { code: "E004", name: "Thursday", fullDay: "", offDay: "" },
+//     { code: "E005", name: "Friday", fullDay: "", offDay: "" },
+//     { code: "E006", name: "Saturday", fullDay: "", offDay: "" },
+//     { code: "E007", name: "Sunday", fullDay: "", offDay: "" },
+//   ];
+
+//   const [page, setPage] = useState(0);
+//   const [rowsPerPage, setRowsPerPage] = useState(5);
+
+//   const handleChangePage = (_event: unknown, newPage: number) => {
+//     setPage(newPage);
+//   };
+
+//   const handleChangeRowsPerPage = (
+//     event: React.ChangeEvent<HTMLInputElement>
+//   ) => {
+//     setRowsPerPage(parseInt(event.target.value, 10));
+//     setPage(0);
+//   };
+
+//   const paginatedData = employeeData.slice(
+//     page * rowsPerPage,
+//     page * rowsPerPage + rowsPerPage
+//   );
+
+//   return (
+//     <div className="container mt-3">
+//       {/* Title */}
+//       <div className="heading-with-line">
+//         <h2 className="stat-value gasp-style">Band</h2>
+//       </div>
+
+//       {/* Band Form Accordion */}
+//       <form>
+//         <Accordion
+//           expanded={employeeFormExpanded}
+//           onChange={() => setEmployeeFormExpanded(!employeeFormExpanded)}
+//         >
+//           <AccordionSummary
+//             expandIcon={
+//               <span className="expand-icon-wrapper">
+//                 <ExpandMoreIcon />
+//               </span>
+//             }
+//             className="accordion-summary"
+//           >
+//             <Typography className="Mainheading">Band</Typography>
+//           </AccordionSummary>
+
+//           <AccordionDetails>
+//             <div className="row mb-2">
+//               <div className="col-md-4 col-sm-6 mb-2">
+//                 <label className="form-label">Code <span className="text-danger">*</span></label>
+//                 <input type="text" className="form-control" placeholder="Enter code" />
+//               </div>
+
+//               <div className="col-md-4 col-sm-6 mb-2">
+//                 <label className="form-label">Name <span className="text-danger">*</span></label>
+//                 <input type="text" className="form-control" placeholder="Enter name" />
+//               </div>
+
+//               <div className="col-md-4 col-sm-6 mb-2">
+//                 <label className="form-label">Notice Period (Days) <span className="text-danger">*</span></label>
+//                 <input type="text" className="form-control" placeholder="Enter Notice" />
+//               </div>
+
+//               <div className="col-md-4 col-sm-6 mb-2">
+//                 <label className="form-label">Probation Period (Months) <span className="text-danger">*</span></label>
+//                 <input type="text" className="form-control" placeholder="Probation Period" />
+//               </div>
+
+//               <div className="col-md-4 col-sm-6 mb-2">
+//                 <div className="form-check mt-4">
+//                   <input type="checkbox" id="compensatoryOff" className="form-check-input" />
+//                   <label htmlFor="compensatoryOff" className="form-check-label form-label">
+//                     Compensatory Off <span className="text-danger">*</span>
+//                   </label>
+//                 </div>
+//               </div>
+//             </div>
+//           </AccordionDetails>
+//         </Accordion>
+//       </form>
+
+//       {/* Week Off Accordion */}
+//       <Accordion
+//         expanded={expanded}
+//         onChange={handleAccordionChange}
+//         style={{ marginTop: "20px" }}
+//       >
+//         <AccordionSummary
+//           expandIcon={
+//             <span className="expand-icon-wrapper">
+//               <ExpandMoreIcon />
+//             </span>
+//           }
+//           className="accordion-summary"
+//         >
+//           <Typography className="Mainheading">Week Offs</Typography>
+//         </AccordionSummary>
+
+//         <AccordionDetails style={{ overflow: "auto" }}>
+//           <div className="table-responsive">
+//             <table className="table table-bordered table-hover text-center align-middle">
+//               <thead className="table-dark">
+//                 <tr>
+//                   <th>Actions</th>
+//                   <th>Week Off</th>
+//                   <th>Full Day</th>
+//                   <th>Off Day</th>
+//                 </tr>
+//               </thead>
+//               <tbody>
+//                 {paginatedData.map((row, index) => (
+//                   <tr key={index}>
+//                     <td>
+//                       <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+//                         <Pencil size={20} color="#0d6efd" style={{ cursor: "pointer" }} />
+//                         <Trash2 size={20} color="red" style={{ cursor: "pointer" }} />
+//                       </div>
+//                     </td>
+//                     <td>{row.name}</td>
+//                     <td><input type="checkbox" className="form-check-input" /></td>
+//                     <td><input type="checkbox" className="form-check-input" /></td>
+//                   </tr>
+//                 ))}
+//               </tbody>
+//             </table>
+
+//             <TablePagination
+//               component="div"
+//               count={employeeData.length}
+//               page={page}
+//               onPageChange={handleChangePage}
+//               rowsPerPage={rowsPerPage}
+//               onRowsPerPageChange={handleChangeRowsPerPage}
+//               rowsPerPageOptions={[5, 10, 15]}
+//               sx={{ mt: 2 }}
+//             />
+//           </div>
+//         </AccordionDetails>
+//       </Accordion>
+
+//       {/* Action Buttons */}
+//       <div className="mt-4 d-flex gap-3">
+//         <Button variant="contained" className="save-button">Save</Button>
+//         <Button variant="contained" className="view-button">View</Button>
+//         <Button variant="contained" className="clear-button">Clear</Button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Band;
+
+
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Dummy.css";
 import { Pencil, Trash2 } from "lucide-react";
 import Button from "@mui/material/Button";
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-  TablePagination,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { TablePagination } from "@mui/material";
 
-const Band = () => {
-  const [expanded, setExpanded] = useState(true);
-  const [employeeFormExpanded, setEmployeeFormExpanded] = useState(true);
-
-  const handleAccordionChange = () => setExpanded(!expanded);
-
+const Band: React.FC = () => {
   const employeeData = [
     { code: "E001", name: "Monday", fullDay: "", offDay: "" },
     { code: "E002", name: "Tuesday", fullDay: "", offDay: "" },
@@ -28,7 +198,6 @@ const Band = () => {
     { code: "E007", name: "Sunday", fullDay: "", offDay: "" },
   ];
 
-  // Pagination
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -42,6 +211,7 @@ const Band = () => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+
   const paginatedData = employeeData.slice(
     page * rowsPerPage,
     page * rowsPerPage + rowsPerPage
@@ -49,171 +219,107 @@ const Band = () => {
 
   return (
     <div className="container mt-3">
-      {/* Band Form Section */}
-      <form>
-        <Accordion
-          expanded={employeeFormExpanded}
-          onChange={() => setEmployeeFormExpanded(!employeeFormExpanded)}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "#004d40" }} />}
-          >
-            <Typography className="Mainheading">Band</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div className="row mb-2">
-              <div className="col-md-4 col-sm-6 mb-2">
-                <label className="form-label">
-                  Code <span className="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter code"
-                />
-              </div>
-              <div className="col-md-4 col-sm-6 mb-2">
-                <label className="form-label">
-                  Name <span className="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter name"
-                />
-              </div>
-              <div className="col-md-4 col-sm-6 mb-2">
-                <label className="form-label">
-                  Notice Period(Days) <span className="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter Notice"
-                />
-              </div>
-              <div className="col-md-4 col-sm-6 mb-2">
-                <label className="form-label">
-                  {" "}
-                  Probation Period(Months){" "}
-                  <span className="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Probation Period "
-                />
-              </div>
-              <div className="col-md-4 col-sm-6 mb-2">
-                <div className="form-check mt-4">
-                  <input
-                    type="checkbox"
-                    id="compensatoryOff"
-                    className="form-check-input"
-                  />
-                  <label htmlFor="compensatoryOff" className="form-check-label form-label">
-                    Compensatory Off <span className="text-danger">*</span>
-                  </label>
-                </div>
-              </div>
+      {/* Title */}
+      <div className="heading-with-line">
+        <h2 className="stat-value gasp-style">Band</h2>
+      </div>
+
+      {/* Band Form */}
+      <form style={{ boxSizing: 'border-box', borderStyle: 'solid', borderWidth: 1, padding: 17,borderColor: "#babac2",borderRadius: "6px",
+    backgroundColor: "#ffffff",
+ }}>
+        <div className="row mb-2">
+          <div className="col-md-4 col-sm-6 mb-2">
+            <label className="form-label">
+              Code <span className="text-danger">*</span>
+            </label>
+            <input type="text" className="form-control" placeholder="Enter code" />
+          </div>
+
+          <div className="col-md-4 col-sm-6 mb-2">
+            <label className="form-label">
+              Name <span className="text-danger">*</span>
+            </label>
+            <input type="text" className="form-control" placeholder="Enter name" />
+          </div>
+
+          <div className="col-md-4 col-sm-6 mb-2">
+            <label className="form-label">
+              Notice Period (Days) <span className="text-danger">*</span>
+            </label>
+            <input type="text" className="form-control" placeholder="Enter Notice" />
+          </div>
+
+          <div className="col-md-4 col-sm-6 mb-2">
+            <label className="form-label">
+              Probation Period (Months) <span className="text-danger">*</span>
+            </label>
+            <input type="text" className="form-control" placeholder="Probation Period" />
+          </div>
+
+          <div className="col-md-4 col-sm-6 mb-2">
+            <div className="form-check mt-4">
+              <input type="checkbox" id="compensatoryOff" className="form-check-input" />
+              <label htmlFor="compensatoryOff" className="form-check-label form-label">
+                Compensatory Off <span className="text-danger">*</span>
+              </label>
             </div>
-          </AccordionDetails>
-        </Accordion>
+          </div>
+        </div>
       </form>
 
       {/* Week Off Table */}
-      <Accordion
-        expanded={expanded}
-        onChange={handleAccordionChange}
-        style={{ marginTop: "20px"}}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "#004d40" }} />}
-        >
-          <Typography className="Mainheading"   
- >Week Offs</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <div className="table-responsive">
-            <table className="table table-bordered table-hover text-center align-middle">
-              <thead className="table-dark">
-                <tr>
-                  <th>Actions</th>
-                  <th>Week Off</th>
-                  <th>Full Day</th>
-                  <th>Off Day</th>
+      <div style={{ marginTop: "20px" }}>
+  <div className="heading-with-line">
+        <h2 className="stat-value gasp-style">Weekoff</h2>
+      </div>        
+      <div className="table-responsive" style={{ boxSizing: 'border-box', borderStyle: 'solid', borderWidth: 1, padding: 17 , borderColor: "#babac2",borderRadius: "6px", 
+    backgroundColor: "#ffffff",
+}}>
+          <table className="table table-bordered table-hover text-center align-middle">
+            <thead className="table-dark">
+              <tr>
+                <th>Actions</th>
+                <th>Week Off</th>
+                <th>Full Day</th>
+                <th>Off Day</th>
+              </tr>
+            </thead>
+            <tbody>
+              {paginatedData.map((row, index) => (
+                <tr key={index}>
+                  <td>
+                    <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+                      <Pencil size={20} color="#0d6efd" style={{ cursor: "pointer" }} />
+                      <Trash2 size={20} color="red" style={{ cursor: "pointer" }} />
+                    </div>
+                  </td>
+                  <td>{row.name}</td>
+                  <td><input type="checkbox" className="form-check-input" /></td>
+                  <td><input type="checkbox" className="form-check-input" /></td>
                 </tr>
-              </thead>
-              <tbody>
-                {paginatedData.map((row, index) => (
-                  <tr key={index}>
-                    {/* Action Icons */}
-                    <td>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          gap: "10px",
-                        }}
-                      >
-                        <Pencil
-                          size={20}
-                          color="#0d6efd"
-                          style={{ cursor: "pointer" }}
-                        />
-                        <Trash2
-                          size={20}
-                          color="red"
-                          style={{ cursor: "pointer" }}
-                        />
-                      </div>
-                    </td>
+              ))}
+            </tbody>
+          </table>
 
-                    {/* Week Off Day */}
-                    <td>{row.name}</td>
-
-                    {/* Full Day Checkbox */}
-                    <td>
-                      <input
-                        type="checkbox"
-                        className="form-check-input"
-                        id={`full-day-${index}`}
-                      />
-                    </td>
-
-                    {/* Off Day Checkbox */}
-                    <td>
-                      <input
-                        type="checkbox"
-                        className="form-check-input"
-                        id={`off-day-${index}`}
-                      />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            {/* Pagination */}
-            <TablePagination
-              component="div"
-              count={employeeData.length}
-              page={page}
-              onPageChange={handleChangePage}
-              rowsPerPage={rowsPerPage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-              rowsPerPageOptions={[5, 10, 15]}
-              sx={{ mt: 2 }}
-            />
-          </div>
-        </AccordionDetails>
-      </Accordion>
+          <TablePagination
+            component="div"
+            count={employeeData.length}
+            page={page}
+            onPageChange={handleChangePage}
+            rowsPerPage={rowsPerPage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+            rowsPerPageOptions={[5, 10, 15]}
+            sx={{ mt: 2 }}
+          />
+        </div>
+      </div>
 
       {/* Action Buttons */}
-        <div className="mt-4 d-flex gap-3">
-        <Button variant="contained" className="save-button" >Save</Button>
-        <Button variant="contained" className="view-button" >View</Button>
-        <Button variant="contained" className="clear-button" >Clear</Button>
+      <div className="mt-4 d-flex gap-3">
+        <Button variant="contained" className="save-button">Save</Button>
+        <Button variant="contained" className="view-button">View</Button>
+        <Button variant="contained" className="clear-button">Clear</Button>
       </div>
     </div>
   );

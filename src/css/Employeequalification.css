@@ -234,7 +234,7 @@ td {
   font-size: 14px;
   outline: none;
   transition: border-color 0.3s ease;
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
 }
 
 .react-datepicker__input-container input:focus {
@@ -267,3 +267,36 @@ td {
     height: fit-content;
 }
 
+.datepicker-wrapper {
+  position: relative;
+}
+
+.datepicker-wrapper .form-control {
+  padding-right: 2.5rem; /* reserve space for icon */
+}
+
+.lucide-calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  pointer-events: none; /* allows clicking input through the icon */
+}
+.datepicker-wrapper {
+  position: relative;
+}
+
+.datepicker-wrapper .form-control {
+  padding-right: 2.5rem;
+}
+
+.lucide-calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  cursor: pointer; /* 👈 makes it look clickable */
+  z-index: 2;
+}

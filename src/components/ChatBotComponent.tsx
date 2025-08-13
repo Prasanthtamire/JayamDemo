@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import  { useState, useRef, useEffect } from 'react';
 import { Send } from 'lucide-react';
 import gsap from 'gsap';
 import '../css/chatbot.css';

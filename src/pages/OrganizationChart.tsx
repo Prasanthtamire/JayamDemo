@@ -100,16 +100,84 @@
 
 
 
-import React from 'react'
+// import React from 'react'
 
-const OrganizationChart = () => {
+// const OrganizationChart = () => {
+//   return (
+//     <div>
+//  <div className="heading-with-line">
+//         <h2 className="stat-value custom-font gasp-style">Organization Chart</h2>
+//       </div>
+
+
+//     </div>
+//   )
+// }
+
+// export default OrganizationChart
+
+
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import Button from '@mui/material/Button';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+import '../css/Employeequalification.css';
+
+const Holidayschart: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
   return (
-    <div>
- <div className="heading-with-line">
-        <h2 className="stat-value custom-font gasp-style">Organization Chart</h2>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="space-y-6"
+    >
+      {/* Heading */}
+      <div className="heading-with-line">
+        <h2 className="stat-value custom-font gasp-style">Holidays</h2>
       </div>
-    </div>
-  )
-}
 
-export default OrganizationChart
+      {/* Form Fields */}
+      <div className="row mb-2">
+        <div className="col-md-4 col-sm-6 mb-2">
+          <label className="form-label">
+            Financial Year <span className="text-danger">*</span>
+          </label>
+          <input type="text" className="form-control" placeholder="Enter year" />
+        </div>
+
+        <div className="col-md-4 col-sm-6 mb-2">
+          <label className="form-label">
+            Date <span className="text-danger">*</span>
+          </label>
+          <DatePicker
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            dateFormat="dd-MM-yyyy"
+            className="form-control"
+            placeholderText="Select a date"
+          />
+        </div>
+
+        <div className="col-md-4 col-sm-6 mb-2">
+          <label className="form-label">
+            Name <span className="text-danger">*</span>
+          </label>
+          <input type="text" className="form-control" placeholder="Enter holiday name" />
+        </div>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="mt-4 d-flex gap-3">
+        <Button variant="contained" className="save-button">Save</Button>
+        <Button variant="contained" className="view-button">View</Button>
+        <Button variant="outlined" className="clear-button">Clear</Button>
+      </div>
+    </motion.div>
+  );
+};
+
+export default Holidayschart;

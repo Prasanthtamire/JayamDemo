@@ -4,18 +4,27 @@
     color: #000000; /* Bootstrap primary color */
     text-transform: none; /* Capitalize text */
     font-family: 'Poppins', sans-serif !important;
+    border-style: solid 1px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cdc8c8
 
   }
   
   .custom-tabs .nav-link.active {
     background-color: #C1DEDC; /* Darker primary color for active tab */
     color: #000000; /* White text for active tab */
-    border-radius: 8px; /* Rounded edges for active tab */
+    border-radius: 0px; /* Rounded edges for active tab */
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
   }
   .custom-tabs .nav-link:hover {
     background-color: #C1DEDC; /* Darker primary color for active tab */
     color: #000000; /* White text for active tab */
-    border-radius: 8px; /* Rounded edges for active tab */
+    border-radius: 0px; /* Rounded edges for active tab */
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
   }
   
   
@@ -24,7 +33,7 @@
     color: #333; /* Dark gray color for content text */
     padding: 10px; /* Add padding inside the content */
     line-height: 1.5; /* Improve readability */
-    background-color: #f9f9f9; /* Light background for tab content */
+    /* background-color: #f9f9f9;  */
     border: 1px solid #ddd; /* Add a border around tab content */
     border-radius: 5px; /* Rounded corners for tab content */
     font-family: 'Poppins', sans-serif !important;

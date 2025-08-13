@@ -19,7 +19,7 @@ const Profile: React.FC = () => {
     position: 'HR Manager',
     department: 'Human Resources',
     email: 'john.doe@company.com',
-    phone: '+1 (555) 123-4567',
+    phone: '+91 8247595118',
     location: 'New York, NY',
     joinDate: '2021-03-15',
     employeeId: 'EMP-001',
@@ -98,10 +98,10 @@ const Profile: React.FC = () => {
         transition={{ delay: 0.1 }}
         className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
       >
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">My Profile</h1>
-          <p className="text-gray-600">Manage your personal information and preferences</p>
-        </div>
+        
+           <div className="heading-with-line">
+        <h2 className="stat-value gasp-style">My Profile</h2>
+      </div>
         
         <motion.button
           whileHover={{ scale: 1.02 }}
@@ -137,9 +137,9 @@ const Profile: React.FC = () => {
           </div>
           
           <div className="flex-1">
-            <h2 className="text-2xl font-bold text-gray-900 mb-1">{userInfo.name}</h2>
-            <p className="text-lg text-gray-600 mb-2">{userInfo.position}</p>
-            <p className="text-sm text-gray-500 mb-4">{userInfo.department}</p>
+            <h2 className="text-xl  mb-1 stat-value">{userInfo.name}</h2>
+            <p className="text-sm text-gray-600 ">{userInfo.position}</p>
+            <p className="text-xs text-gray-500 mb-4">{userInfo.department}</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="flex items-center space-x-2 text-sm text-gray-600">
@@ -194,8 +194,9 @@ const Profile: React.FC = () => {
           transition={{ delay: 0.5 }}
           className="lg:col-span-2 glass-card p-6"
         >
-          <h3 className="text-xl font-semibold text-gray-900 mb-6">Personal Information</h3>
-          
+          <div className="heading-with-line">
+        <h2 className="stat-value gasp-style">Personal Information</h2>
+      </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -228,7 +229,9 @@ const Profile: React.FC = () => {
 
           {/* Skills Section */}
           <div className="mt-8">
-            <h4 className="text-lg font-semibold text-gray-900 mb-4">Skills & Competencies</h4>
+<div className="heading-with-line">
+        <h2 className="stat-value gasp-style">Skills & Competencies</h2>
+      </div>       
             <div className="space-y-4">
               {skills.map((skill, index) => (
                 <motion.div
@@ -262,9 +265,11 @@ const Profile: React.FC = () => {
           transition={{ delay: 0.6 }}
           className="glass-card p-6"
         >
-          <h3 className="text-xl font-semibold text-gray-900 mb-6">Recent Activity</h3>
           
-          <div className="space-y-4">
+<div className="heading-with-line">
+        <h2 className="stat-value gasp-style">Recent Activity</h2>
+      </div>  
+                <div className="space-y-4">
             {recentActivity.map((activity, index) => (
               <motion.div
                 key={activity.id}
@@ -303,37 +308,41 @@ const Profile: React.FC = () => {
         transition={{ delay: 0.8 }}
         className="glass-card p-6"
       >
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-xl font-semibold text-gray-900">Emergency Contact</h3>
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="text-primary-600 hover:text-primary-700 text-sm font-medium"
-          >
-            Edit
-          </motion.button>
+        <div className="flex items-center justify-between mb-1">
+             
+<div className="heading-with-line">
+        <h2 className="stat-value gasp-style"> Emergency Contact</h2>
+      </div>  
+           <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg hover:shadow-lg transition-all duration-200"
+        >
+          <Edit className="w-4 h-4" />
+          <span>Edit </span>
+        </motion.button>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-md font-medium text-gray-700 mb-2">
               Contact Name
             </label>
-            <p className="text-gray-900">Jane Doe</p>
+            <p className="text-blue-900">Jane Doe</p>
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-md font-medium text-gray-700 mb-2">
               Relationship
             </label>
-            <p className="text-gray-900">Spouse</p>
+            <p className="text-red-900">Spouse</p>
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-md font-medium text-gray-700 mb-2">
               Phone Number
             </label>
-            <p className="text-gray-900">+1 (555) 987-6543</p>
+            <p className="text-green-900">8247595118</p>
           </div>
         </div>
       </motion.div>

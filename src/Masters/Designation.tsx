@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Dummy.css";
-import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { Pencil, Trash2 } from "lucide-react"; // <-- Add this import at the top
 
@@ -93,16 +92,27 @@ const Designation = () => {
   return (
     <div className="container mt-3">
       {/* Form Section */}
+       {/* Title */}
+      {/* <div className="heading-with-line">
+        <h2 className="stat-value gasp-style">Designation</h2>
+      </div> */}
+
       <form>
         <Accordion
           expanded={employeeFormExpanded}
           onChange={() => setEmployeeFormExpanded(!employeeFormExpanded)}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "#004d40" }} />}
+            expandIcon={
+              <span className="expand-icon-wrapper">
+                <ExpandMoreIcon />
+              </span>
+            }
+            className="accordion-summary"
           >
             <Typography className="Mainheading">Designation</Typography>
           </AccordionSummary>
+
           <AccordionDetails>
             <div className="row mb-2">
               <div className="col-md-4 col-sm-6 mb-2">
@@ -157,8 +167,13 @@ const Designation = () => {
         onChange={handleAccordionChange}
         style={{ marginTop: "20px" }}
       >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "#004d40" }} />}
+      <AccordionSummary
+          expandIcon={
+            <span className="expand-icon-wrapper">
+              <ExpandMoreIcon />
+            </span>
+          }
+          className="accordion-summary"
         >
           <Typography className="Mainheading">Designation Details</Typography>
         </AccordionSummary>

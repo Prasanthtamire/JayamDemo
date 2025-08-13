@@ -341,8 +341,7 @@ const handleShowLeave = async () => {
       </div>
       <Graphchart />
       <EmployeeDashboardwidget />
-
-    
+  
 <QuickActions/>
 
       {/* Modal with Attendance Details */}
@@ -456,7 +455,9 @@ const handleShowLeave = async () => {
           </Button>
         </Modal.Footer>
       </Modal>
+            <div className="text-center text-xs text-slate-500">© {new Date().getFullYear()} JayamSolutions Pvt LTD.</div>
     </div>
+    
   );
 };
 

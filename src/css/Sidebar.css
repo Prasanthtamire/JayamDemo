@@ -18,3 +18,22 @@
     -o-object-fit: cover;
     object-fit: cover;
 }
+.margincardbottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb; /* Tailwind's gray-200 */
+}
+.collapse-toggle-button {
+  align-self: flex-end;
+  margin: 8px;
+  padding: 6px;
+  border-radius: 4px;
+  background: #f1f1f1;
+  transition: background 0.2s;
+}
+
+.collapse-toggle-button:hover {
+  background: #e0e0e0;
+}

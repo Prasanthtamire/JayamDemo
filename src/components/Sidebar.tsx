@@ -31,8 +31,12 @@ const menuItems = [
   {
     title: "Dashboard",
     icon: LayoutDashboard,
-    path: "/dashboard",
-  },
+    path: "/admindashbaord",
+        submenu: [{ title: "Employee", path: "/dashboard" },
+                  { title: "Payroll", path: "/Payrolldashbaord" },
+                  { title: "Admin", path: "/admindashbaord" },
+
+], },
   {
     title: "Organization",
     icon: Users,
@@ -123,6 +127,7 @@ const menuItems = [
       // { title: 'Appraisals', path: '/performance/appraisals' },
     ],
   },
+ 
 
   //  {
   //   title: 'HRM',
@@ -210,7 +215,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       className="fixed lg:relative z-50 flex flex-col w-64 h-full bg-white shadow-2xl lg:shadow-lg lg:translate-x-0"
     >
       {/* Header */}
-      <div className="flex items-center justify-between p-2.5 border-b border-gray-200">
+      <div className="margincardbottom">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10  from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
             {/* <Building2 className="w-6 h-6 text-white" /> */}
@@ -333,7 +338,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute bottom-full left-4 right-4 mb-2 bg-white border border-gray-200 rounded-lg shadow-lg py-2"
+              className="absolute bottom-full left-1 right-1 mb-0.5 bg-white border border-gray-200 rounded-lg shadow-lg py-2"
             >
               <Link
                 to="/profile"

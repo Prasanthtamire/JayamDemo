@@ -4,7 +4,6 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Grid from "@mui/material/Grid";
 
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
@@ -968,26 +967,12 @@ const Editemployee = () => {
         </div>
 
         {/* Buttons */}
-        <Grid container spacing={1} className="button-container">
-          <Grid item xs={12} sm={3} md={1} lg={1}>
-            <Button variant="contained" className="save-button">
-              {" "}
-              Save
-            </Button>
-          </Grid>
-          <Grid item xs={12} sm={3} md={1} lg={1}>
-            <Button variant="contained" className="view-button">
-              View
-            </Button>
-          </Grid>
+         <div className="mt-1 d-flex gap-2">
+                <Button variant="contained" className="save-button">Save</Button>
+                                <Button variant="contained" className="view-button">View</Button>
 
-          {/* Clear Button */}
-          <Grid item xs={12} sm={3} md={1} lg={1}>
-            <Button variant="contained" className="clear-button">
-              Clear{" "}
-            </Button>
-          </Grid>
-        </Grid>
+                <Button variant="outlined" className="clear-button">Clear</Button>
+              </div>
       </Card>
     </div>
   );

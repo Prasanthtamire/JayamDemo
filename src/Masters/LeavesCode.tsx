@@ -84,14 +84,22 @@ const LeavesCode = () => {
 
   return (
     <div className="container mt-3">
+       <div className="heading-with-line">
+        <h2 className="stat-value gasp-style">Leaves code</h2>
+      </div>
       {/* Form Section */}
       <form>
         <Accordion
           expanded={employeeFormExpanded}
           onChange={() => setEmployeeFormExpanded(!employeeFormExpanded)}
         >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "#004d40" }} />}
+            <AccordionSummary
+            expandIcon={
+              <span className="expand-icon-wrapper">
+                <ExpandMoreIcon />
+              </span>
+            }
+            className="accordion-summary"
           >
             <Typography className="Mainheading">Leaves Code</Typography>
           </AccordionSummary>
@@ -367,10 +375,15 @@ const LeavesCode = () => {
         onChange={handleAccordionChange}
         style={{ marginTop: "20px" }}
       >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon style={{ color: "#004d40" }} />}
+       <AccordionSummary
+          expandIcon={
+            <span className="expand-icon-wrapper">
+              <ExpandMoreIcon />
+            </span>
+          }
+          className="accordion-summary"
         >
-          <Typography className="Mainheading">Leaves Information </Typography>
+          <Typography className="Mainheading">Leaves Code Details</Typography>
         </AccordionSummary>
 
         <AccordionDetails>
